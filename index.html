@@ -13,9 +13,17 @@
       padding: 0.5rem 1rem;
       font-size: 1rem;
     }
+    section {
+      margin-top: 2rem;
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
     ul {
-      margin-top: 1rem;
-      padding-left: 1.2rem;
+      padding-left: 1.5rem;
     }
     li {
       margin: 0.3rem 0;
@@ -26,11 +34,10 @@
 
   <h1>Liste der Vereine</h1>
   
-  <button onclick="sortByName()">Nach Name sortieren</button>
-  <button onclick="sortByStand()">Nach Standnummer sortieren</button>
-  <button onclick="sortByFlaeche()">Nach Fläche sortieren</button>
-  
-  <ul id="vereinListe"></ul>
+  <button onclick="sortAndRender('name')">Nach Name sortieren</button>
+  <button onclick="sortAndRender('stand')">Nach Standnummer sortieren</button>
+
+  <div id="vereinContainer"></div>
 
   <script>
     const vereine = [
@@ -44,33 +51,47 @@
       { name: "Fußballverband SH", stand: 9, flaeche: "Moorteichwiese" }
     ];
 
-    function renderList(items) {
-      const ul = document.getElementById("vereinListe");
-      ul.innerHTML = "";
-      items.forEach(verein => {
-        const li = document.createElement("li");
-        li.textContent = `${verein.name} (Stand ${verein.stand}, Fläche: ${verein.flaeche})`;
-        ul.appendChild(li);
+    function sortAndRender(sorting) {
+      const container = document.getElementById("vereinContainer");
+      container.innerHTML = "";
+
+      // Gruppieren nach Fläche
+      const gruppiert = {};
+      vereine.forEach(verein => {
+        if (!gruppiert[verein.flaeche]) {
+          gruppiert[verein.flaeche] = [];
+        }
+        gruppiert[verein.flaeche].push(verein);
+      });
+
+      // Sortierfunktion vorbereiten
+      const sortFunc = sorting === 'name'
+        ? (a, b) => a.name.localeCompare(b.name)
+        : (a, b) => a.stand - b.stand;
+
+      // Flächen alphabetisch sortieren
+      const flaechenNamen = Object.keys(gruppiert).sort();
+
+      flaechenNamen.forEach(flaeche => {
+        const section = document.createElement("section");
+        const heading = document.createElement("h2");
+        heading.textContent = flaeche;
+        section.appendChild(heading);
+
+        const ul = document.createElement("ul");
+        gruppiert[flaeche].sort(sortFunc).forEach(verein => {
+          const li = document.createElement("li");
+          li.textContent = `${verein.name} (Stand ${verein.stand})`;
+          ul.appendChild(li);
+        });
+
+        section.appendChild(ul);
+        container.appendChild(section);
       });
     }
 
-    function sortByName() {
-      const sorted = [...vereine].sort((a, b) => a.name.localeCompare(b.name));
-      renderList(sorted);
-    }
-
-    function sortByStand() {
-      const sorted = [...vereine].sort((a, b) => a.stand - b.stand);
-      renderList(sorted);
-    }
-
-    function sortByFlaeche() {
-      const sorted = [...vereine].sort((a, b) => a.flaeche.localeCompare(b.flaeche));
-      renderList(sorted);
-    }
-
-    // Standardmäßig nach Name sortieren beim Laden
-    sortByName();
+    // Standardmäßig nach Name sortieren
+    sortAndRender('name');
   </script>
 
 </body>
