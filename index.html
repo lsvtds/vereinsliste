@@ -39,7 +39,7 @@
 
   <div id="vereinContainer"></div>
 
- <script>
+<script>
   const vereine = [
     { name: "Turnverein Kiel", stand: 12, flaeche: "Rewe Areal" },
     { name: "Ruderclub Schleswig", stand: 3, flaeche: "Moorteichwiese" },
@@ -85,11 +85,12 @@
       const ul = document.createElement("ul");
       gruppiert[flaeche].sort(sortFunc).forEach(verein => {
         const li = document.createElement("li");
-        const kurz = kuerzel[verein.flaeche];
-        const standAnzeige = sorting === "stand"
-          ? `${kurz} ${verein.stand}`
-          : `Stand ${verein.stand}`;
-        li.textContent = `${standAnzeige}: ${verein.name}`;
+        if (sorting === "stand") {
+          const kurz = kuerzel[verein.flaeche];
+          li.textContent = `${kurz} ${verein.stand}: ${verein.name}`;
+        } else {
+          li.textContent = `${verein.name}`;
+        }
         ul.appendChild(li);
       });
 
@@ -101,6 +102,7 @@
   // Standardmäßig nach Name sortieren
   sortAndRender('name');
 </script>
+
 
 
 </body>
