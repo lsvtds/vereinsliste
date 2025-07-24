@@ -28,23 +28,24 @@
   
   <button onclick="sortByName()">Nach Name sortieren</button>
   <button onclick="sortByStand()">Nach Standnummer sortieren</button>
+  <button onclick="sortByFlaeche()">Nach Fläche sortieren</button>
   
   <ul id="vereinListe"></ul>
 
   <script>
     const vereine = [
-      { name: "Turnverein Kiel", stand: 12 },
-      { name: "Ruderclub Schleswig", stand: 3 },
-      { name: "Fußballfreunde Lübeck", stand: 8 },
-      { name: "Handballverein Flensburg", stand: 5 }
+      { name: "Turnverein Kiel", stand: 12, flaeche: "Rewe Areal" },
+      { name: "Ruderclub Schleswig", stand: 3, flaeche: "Moorteichwiese" },
+      { name: "Fußballfreunde Lübeck", stand: 8, flaeche: "Haus des Sports" },
+      { name: "Handballverein Flensburg", stand: 5, flaeche: "Winterbeker Weg" }
     ];
 
     function renderList(items) {
       const ul = document.getElementById("vereinListe");
-      ul.innerHTML = ""; // Liste leeren
+      ul.innerHTML = "";
       items.forEach(verein => {
         const li = document.createElement("li");
-        li.textContent = `${verein.name} (Stand ${verein.stand})`;
+        li.textContent = `${verein.name} (Stand ${verein.stand}, Fläche: ${verein.flaeche})`;
         ul.appendChild(li);
       });
     }
@@ -59,8 +60,14 @@
       renderList(sorted);
     }
 
-    // Beim Laden alphabetisch anzeigen
+    function sortByFlaeche() {
+      const sorted = [...vereine].sort((a, b) => a.flaeche.localeCompare(b.flaeche));
+      renderList(sorted);
+    }
+
+    // Standardmäßig nach Name sortieren beim Laden
     sortByName();
   </script>
+
 </body>
 </html>
