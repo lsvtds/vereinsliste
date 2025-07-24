@@ -53,63 +53,58 @@
   <div id="output"></div>
 
   <script>
-    const vereine = [
-      // --- Moorteichwiese ---
-      { name: "BCK Kiel", stand: 1, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "American Sports Club Kiel e.V.", stand: 2, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "AOK NordWest", stand: 3, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "SHFV", stand: 4, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Sportverband Kiel e.V.", stand: 5, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Lacrosse Club Kiel e.V.", stand: 6, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "REMONDIS GmbH & Co. KG, Region Nord", stand: 7, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Bundesinstitut für Öffentliche Gesundheit (BIÖG)", stand: 8, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Handballverband Schleswig-Holstein e.V.", stand: 9, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Sparkassen- und Giroverband für Schleswig-Holstein", stand: 10, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Ruderverband Schleswig-Holstein", stand: 11, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Pferdesportverband SH", stand: 12, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "FT Adler Kiel e.V.", stand: 13, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "FT Vorwärts Kiel", stand: 14, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Holstein Kiel", stand: 15, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Sportjugend SH", stand: 16, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "TuS Gaarden", stand: 17, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Norddeutscher Schützenbund von 1860 e.V.", stand: 18, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "WECycle e.V.", stand: 19, area: "Moorteichwiese", prefix: "MTW" },
+   const vereine = [
+  { name: "BCK Kiel", stand: 1, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "American Sports Club Kiel e.V.", stand: 2, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "AOK NordWest", stand: 3, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "SHFV", stand: 4, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "Sportverband Kiel e.V.", stand: 5, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "Lacrosse Club Kiel e.V.", stand: 6, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "REMONDIS GmbH & Co. KG, Region Nord", stand: 7, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "Bundesinstitut für Öffentliche Gesundheit (BIÖG)", stand: 8, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "Handballverband Schleswig-Holstein e.V.", stand: 9, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "Sparkassen- und Giroverband für Schleswig-Holstein", stand: 10, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "Ruderverband Schleswig-Holstein", stand: 11, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "Pferdesportverband SH", stand: 12, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "FT Adler Kiel e.V.", stand: 13, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "FT Vorwärts Kiel", stand: 14, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "Holstein Kiel", stand: 15, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "Sportjugend SH", stand: 16, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "TuS Gaarden", stand: 17, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "Norddeutscher Schützenbund von 1860 e.V.", stand: 18, area: "Moorteichwiese", prefix: "MTW" },
+  { name: "WECycle e.V.", stand: 19, area: "Moorteichwiese", prefix: "MTW" },
 
-      // --- Haus des Sports ---
-      { name: "Kegelverband SH", stand: 1, area: "Haus des Sports", prefix: "HDS" },
-      { name: "Ruderverband Schleswig-Holstein", stand: 2, area: "Haus des Sports", prefix: "HDS" },
+  { name: "Kegelverband SH", stand: 1, area: "Haus des Sports", prefix: "HDS" },
+  { name: "Ruderverband Schleswig-Holstein", stand: 2, area: "Haus des Sports", prefix: "HDS" },
 
-      // --- Winterbeker Weg ---
-      { name: "Tennisverband Schleswig-Holstein e.V.", stand: 1, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Kieler TB", stand: 2, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Special Olympics Schleswig-Holstein", stand: 3, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Kieler Squash Club", stand: 4, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Ellerbeker Turnvereinigung von 1886 e.V.", stand: 5, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Zahnärztekammer Schleswig-Holstein", stand: 6, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "SH Fachverband für Motorsport e.V.", stand: 7, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "REWE", stand: 8, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "Tennisverband Schleswig-Holstein e.V.", stand: 1, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "Kieler TB", stand: 2, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "Special Olympics Schleswig-Holstein", stand: 3, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "Kieler Squash Club", stand: 4, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "Ellerbeker Turnvereinigung von 1886 e.V.", stand: 5, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "Zahnärztekammer Schleswig-Holstein", stand: 6, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "SH Fachverband für Motorsport e.V.", stand: 7, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "REWE", stand: 8, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "Judo Klub Kiel", stand: 9, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "Aikido-Verband Schleswig-Holstein", stand: 10, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "Schleswig-Holsteinischer Ju-Jutsu Verband e.V.", stand: 11, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "TSG Concordia Schönkirchen", stand: 12, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "Karate Verband Schleswig-Holstein", stand: 13, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "TANGUN TAEKWON-DO e.V.", stand: 14, area: "Winterbeker Weg", prefix: "WW" },
+  { name: "Landessportverband Schleswig-Holstein", stand: 15, area: "Winterbeker Weg", prefix: "WW" },
 
-      // --- Rewe-Areal ---
-      { name: "Basketballverband SH", stand: 1, area: "Rewe-Areal", prefix: "RA" },
-      { name: "Deutscher Behindertensportverband (DBS)", stand: 2, area: "Rewe-Areal", prefix: "RA" },
-      { name: "Baltic Storms", stand: 3, area: "Rewe-Areal", prefix: "RA" },
-      { name: "CCVSH e.V.", stand: 4, area: "Rewe-Areal", prefix: "RA" },
-      { name: "Karnevalsgesellschaft Fidelitas Kiel 1947 e.V.", stand: 5, area: "Rewe-Areal", prefix: "RA" },
-      { name: "Tanzen in Kiel e.V.", stand: 6, area: "Rewe-Areal", prefix: "RA" },
-      { name: "LSV/Sportjugend", stand: 7, area: "Rewe-Areal", prefix: "RA" },
-      { name: "VfB Kiel von 1910 e.V.", stand: 8, area: "Rewe-Areal", prefix: "RA" },
-      { name: "FTV/BVSH", stand: 9, area: "Rewe-Areal", prefix: "RA" },
-      { name: "1. Latin Team Kiel e.V.", stand: 10, area: "Rewe-Areal", prefix: "RA" },
+  { name: "Basketballverband SH", stand: 1, area: "Rewe-Areal", prefix: "RA" },
+  { name: "Deutscher Behindertensportverband (DBS)", stand: 2, area: "Rewe-Areal", prefix: "RA" },
+  { name: "Baltic Storms", stand: 3, area: "Rewe-Areal", prefix: "RA" },
+  { name: "CCVSH e.V.", stand: 4, area: "Rewe-Areal", prefix: "RA" },
+  { name: "Karnevalsgesellschaft Fidelitas Kiel 1947 e.V.", stand: 5, area: "Rewe-Areal", prefix: "RA" },
+  { name: "Tanzen in Kiel e.V.", stand: 6, area: "Rewe-Areal", prefix: "RA" },
+  { name: "LSV/Sportjugend", stand: 7, area: "Rewe-Areal", prefix: "RA" },
+  { name: "VfB Kiel von 1910 e.V.", stand: 8, area: "Rewe-Areal", prefix: "RA" },
+  { name: "FTV/BVSH", stand: 9, area: "Rewe-Areal", prefix: "RA" },
+  { name: "1. Latin Team Kiel e.V.", stand: 10, area: "Rewe-Areal", prefix: "RA" }
+];
 
-      // --- Budomeile ---
-      { name: "Judo Klub Kiel", stand: 1, area: "Budomeile", prefix: "BM" },
-      { name: "Aikido-Verband Schleswig-Holstein", stand: 2, area: "Budomeile", prefix: "BM" },
-      { name: "Schleswig-Holsteinischer Ju-Jutsu Verband e.V.", stand: 3, area: "Budomeile", prefix: "BM" },
-      { name: "TSG Concordia Schönkirchen", stand: 4, area: "Budomeile", prefix: "BM" },
-      { name: "Karate Verband Schleswig-Holstein", stand: 5, area: "Budomeile", prefix: "BM" },
-      { name: "TANGUN TAEKWON-DO e.V.", stand: 6, area: "Budomeile", prefix: "BM" },
-      { name: "Landessportverband Schleswig-Holstein", stand: 7, area: "Budomeile", prefix: "BM" }
-    ];
 
     let currentSort = 'stand';
 
