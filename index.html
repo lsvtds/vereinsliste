@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Vereinsübersicht</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    button {
+      margin-right: 10px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+    ul {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+    }
+    li {
+      margin: 0.3rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Liste der Vereine</h1>
+  
+  <button onclick="sortByName()">Nach Name sortieren</button>
+  <button onclick="sortByStand()">Nach Standnummer sortieren</button>
+  
+  <ul id="vereinListe"></ul>
+
+  <script>
+    const vereine = [
+      { name: "Turnverein Kiel", stand: 12 },
+      { name: "Ruderclub Schleswig", stand: 3 },
+      { name: "Fußballfreunde Lübeck", stand: 8 },
+      { name: "Handballverein Flensburg", stand: 5 }
+    ];
+
+    function renderList(items) {
+      const ul = document.getElementById("vereinListe");
+      ul.innerHTML = ""; // Liste leeren
+      items.forEach(verein => {
+        const li = document.createElement("li");
+        li.textContent = `${verein.name} (Stand ${verein.stand})`;
+        ul.appendChild(li);
+      });
+    }
+
+    function sortByName() {
+      const sorted = [...vereine].sort((a, b) => a.name.localeCompare(b.name));
+      renderList(sorted);
+    }
+
+    function sortByStand() {
+      const sorted = [...vereine].sort((a, b) => a.stand - b.stand);
+      renderList(sorted);
+    }
+
+    // Beim Laden alphabetisch anzeigen
+    sortByName();
+  </script>
+</body>
+</html>
