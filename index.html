@@ -16,14 +16,14 @@
       background: white;
       padding: 1rem;
       text-align: center;
-      border-bottom: 2px solid #0077cc;
+      border-bottom: 2px solid #16345e;
     }
     .header img {
       max-width: 100%;
       height: auto;
     }
     h1 {
-      color: #0077cc;
+      color: #16345e;
       margin: 0.5rem 0;
     }
     .nav {
@@ -33,14 +33,14 @@
       margin: 1rem 0;
     }
     .nav a {
-      color: #0077cc;
+      color: #16345e;
       text-decoration: none;
       font-weight: bold;
     }
     .button-bar {
       position: sticky;
       top: 0;
-      background: #0077cc;
+      background: #16345e;
       padding: 1rem;
       z-index: 100;
       display: flex;
@@ -50,8 +50,8 @@
     }
     .button-bar button {
       background: white;
-      color: #0077cc;
-      border: 2px solid #0077cc;
+      color: #16345e;
+      border: 2px solid #16345e;
       border-radius: 10px;
       padding: 0.8rem 1.5rem;
       font-size: 1.2rem;
@@ -60,7 +60,7 @@
       min-width: 180px;
     }
     .button-bar button:hover {
-      background: #005fa3;
+      background: #0f2a4a;
       color: white;
     }
     .section {
@@ -68,7 +68,7 @@
       padding: 0 1rem;
     }
     h2 {
-      background-color: #0077cc;
+      background-color: #16345e;
       color: white;
       padding: 0.5rem;
       border-radius: 5px;
@@ -113,128 +113,4 @@
   </div>
 
   <div class="button-bar">
-    <button onclick="sortByName()">Nach Name sortieren</button>
-    <button onclick="sortByStand()">Nach Standnummer sortieren</button>
-  </div>
-
-  <div id="output"></div>
-
-  <script>
-    const vereine = [
-      { name: "BCK Kiel", stand: 1, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "American Sports Club Kiel e.V.", stand: 2, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "AOK NordWest", stand: 3, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "SHFV", stand: 4, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Sportverband Kiel e.V.", stand: 5, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Lacrosse Club Kiel e.V.", stand: 6, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "REMONDIS GmbH & Co. KG, Region Nord", stand: 7, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Bundesinstitut für Öffentliche Gesundheit (BIÖG)", stand: 8, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Handballverband Schleswig-Holstein e.V.", stand: 9, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Sparkassen- und Giroverband für Schleswig-Holstein", stand: 10, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Ruderverband Schleswig-Holstein", stand: 11, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Pferdesportverband SH", stand: 12, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "FT Adler Kiel e.V.", stand: 13, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "FT Vorwärts Kiel", stand: 14, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Holstein Kiel", stand: 15, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Sportjugend SH", stand: 16, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "TuS Gaarden", stand: 17, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Norddeutscher Schützenbund von 1860 e.V.", stand: 18, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "WECycle e.V.", stand: 19, area: "Moorteichwiese", prefix: "MTW" },
-      { name: "Kegelverband SH", stand: 1, area: "Haus des Sports", prefix: "HDS" },
-      { name: "Ruderverband Schleswig-Holstein", stand: 2, area: "Haus des Sports", prefix: "HDS" },
-      { name: "PSV Kiel Wik", stand: 3, area: "Haus des Sports", prefix: "HDS" },
-      { name: "BSG Neumünster", stand: 4, area: "Haus des Sports", prefix: "HDS" },
-      { name: "AWO Landesverband Schleswig-Holstein e. V.", stand: 5, area: "Haus des Sports", prefix: "HDS" },
-      { name: "SHKV", stand: 6, area: "Haus des Sports", prefix: "HDS" },
-      { name: "ARAG Sportversicherung", stand: 7, area: "Haus des Sports", prefix: "HDS" },
-      { name: "SikanFit eV", stand: 8, area: "Haus des Sports", prefix: "HDS" },
-      { name: "Landessportverband Schleswig-Holstein e.V.", stand: 9, area: "Haus des Sports", prefix: "HDS" },
-      { name: "SK Doppelbauer Kiel", stand: 10, area: "Haus des Sports", prefix: "HDS" },
-      { name: "Ocean Crew Kiel e.V.", stand: 11, area: "Haus des Sports", prefix: "HDS" },
-      { name: "Kieler Buben", stand: 12, area: "Haus des Sports", prefix: "HDS" },
-      { name: "LSV/Sportjugend", stand: 13, area: "Haus des Sports", prefix: "HDS" },
-      { name: "VDST Tauchsportlandesverband im VDST", stand: 14, area: "Haus des Sports", prefix: "HDS" },
-      { name: "Tischtennis-Verband S-H", stand: 15, area: "Haus des Sports", prefix: "HDS" },
-      { name: "Sport-Thieme GmbH", stand: 16, area: "Haus des Sports", prefix: "HDS" },
-      { name: "SHTV", stand: 17, area: "Haus des Sports", prefix: "HDS" },
-      { name: "Tennisverband Schleswig-Holstein e.V.", stand: 1, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Kieler TB", stand: 2, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Special Olympics Schleswig-Holstein", stand: 3, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Kieler Squash Club", stand: 4, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Ellerbeker Turnvereinigung von 1886 e.V.", stand: 5, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Zahnärztekammer Schleswig-Holstein", stand: 6, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "SH Fachverband für Motorsport e.V.", stand: 7, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "REWE", stand: 8, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Judo Klub Kiel", stand: 9, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Aikido-Verband Schleswig-Holstein", stand: 10, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Schleswig-Holsteinischer Ju-Jutsu Verband e.V.", stand: 11, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "TSG Concordia Schönkirchen", stand: 12, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Karate Verband Schleswig-Holstein", stand: 13, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "TANGUN TAEKWON-DO e.V.", stand: 14, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Landessportverband Schleswig-Holstein", stand: 15, area: "Winterbeker Weg", prefix: "WW" },
-      { name: "Basketballverband SH", stand: 1, area: "Rewe-Areal", prefix: "RA" },
-      { name: "Deutscher Behindertensportverband (DBS)", stand: 2, area: "Rewe-Areal", prefix: "RA" },
-      { name: "Baltic Storms", stand: 3, area: "Rewe-Areal", prefix: "RA" },
-      { name: "CCVSH e.V.", stand: 4, area: "Rewe-Areal", prefix: "RA" },
-      { name: "Karnevalsgesellschaft Fidelitas Kiel 1947 e.V.", stand: 5, area: "Rewe-Areal", prefix: "RA" },
-      { name: "Tanzen in Kiel e.V.", stand: 6, area: "Rewe-Areal", prefix: "RA" },
-      { name: "LSV/Sportjugend", stand: 7, area: "Rewe-Areal", prefix: "RA" },
-      { name: "VfB Kiel von 1910 e.V.", stand: 8, area: "Rewe-Areal", prefix: "RA" },
-      { name: "FTV/BVSH", stand: 9, area: "Rewe-Areal", prefix: "RA" },
-      { name: "1. Latin Team Kiel e.V.", stand: 10, area: "Rewe-Areal", prefix: "RA" }
-    ];
-
-    let currentSort = 'stand';
-
-    function renderList() {
-      const container = document.getElementById("output");
-      container.innerHTML = "";
-      if (currentSort === "name") {
-        const ul = document.createElement("ul");
-        vereine.forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = `${item.name} (${item.area})`;
-          ul.appendChild(li);
-        });
-        container.appendChild(ul);
-      } else {
-        const grouped = vereine.reduce((acc, item) => {
-          if (!acc[item.area]) acc[item.area] = [];
-          acc[item.area].push(item);
-          return acc;
-        }, {});
-        for (const [area, list] of Object.entries(grouped)) {
-          const section = document.createElement("div");
-          section.className = "section";
-          const heading = document.createElement("h2");
-          heading.textContent = area;
-          section.appendChild(heading);
-          const ul = document.createElement("ul");
-          list.forEach((item) => {
-            const li = document.createElement("li");
-            li.textContent = `${item.prefix} ${item.stand}: ${item.name}`;
-            ul.appendChild(li);
-          });
-          section.appendChild(ul);
-          container.appendChild(section);
-        }
-      }
-    }
-
-    function sortByName() {
-      currentSort = "name";
-      vereine.sort((a, b) => a.name.localeCompare(b.name));
-      renderList();
-    }
-
-    function sortByStand() {
-      currentSort = "stand";
-      vereine.sort((a, b) => a.area.localeCompare(b.area) || a.stand - b.stand);
-      renderList();
-    }
-
-    // Initial render
-    sortByStand();
-  </script>
-</body>
-</html>
+    
