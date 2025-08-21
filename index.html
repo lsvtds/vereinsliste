@@ -10,82 +10,115 @@
       background: #f9f9f9;
       padding: 0;
       margin: 0;
+      color: #333;
+    }
+    .header {
+      background: white;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 2px solid #0077cc;
+    }
+    .header img {
+      max-width: 100%;
+      height: auto;
     }
     h1 {
-      margin: 1rem;
+      color: #0077cc;
+      margin: 0.5rem 0;
     }
-    h2 {
-      background-color: #ddd;
-      padding: 0.5rem;
-      border-radius: 5px;
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
     }
-    .section {
-      margin-bottom: 2rem;
-      padding: 0 1rem;
+    .nav a {
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: bold;
     }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      background: #fff;
-      padding: 0.6rem 0.8rem;
-      margin: 0.3rem 0;
-      border-radius: 4px;
-    }
-    /* 🔵 BUTTONS */
     .button-bar {
       position: sticky;
       top: 0;
-      background: #ffffff;
+      background: #0077cc;
       padding: 1rem;
       z-index: 100;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       justify-content: center;
-      border-bottom: 2px solid #eee;
     }
     .button-bar button {
-      background: #0077cc;
-      color: white;
-      border: none;
+      background: white;
+      color: #0077cc;
+      border: 2px solid #0077cc;
       border-radius: 10px;
-      padding: 1rem 2rem;
-      font-size: 1.4rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.2rem;
       cursor: pointer;
-      transition: background 0.3s ease;
-      min-width: 200px;
+      transition: all 0.3s ease;
+      min-width: 180px;
     }
     .button-bar button:hover {
       background: #005fa3;
+      color: white;
     }
-   /* 📱 Auf Handys nochmal größer & volle Breite */
-@media (max-width: 768px) {
-  .button-bar {
-    flex-direction: column;
-  }
-  .button-bar button {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.2rem;
-    min-height: 55px;
-  }
-  li {
-    font-size: 1.0rem;
-    background: none;
-  }
-}
+    .section {
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+    h2 {
+      background-color: #0077cc;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 5px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: white;
+      padding: 0.6rem 0.8rem;
+      margin: 0.3rem 0;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 768px) {
+      .button-bar {
+        flex-direction: column;
+      }
+      .button-bar button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.2rem;
+        min-height: 55px;
+      }
+      li {
+        font-size: 1.1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Vereinsliste – Tag des Sports 2025</h1>
-  <!-- 🔥 Sticky Buttons -->
+  <div class="header">
+    <img src="https://lsvtds.github.io/logo-tag-des-sport25.png" alt="Tag des Sports 2025" style="height: 80px;">
+    <img src="https://lsvtds.github.io/logo-lsv.jpg" alt="Landessportverband Schleswig-Holstein" style="height: 60px;">
+    <h1>Vereinsliste – Tag des Sports 2025</h1>
+    <div class="nav">
+      <a href="https://lsvtds.github.io/">Zurück zur Startseite</a>
+      <a href="https://lsvtds.github.io/zentral.html">Zentrale Karte</a>
+      <a href="https://lsvtds.github.io/regional.html">Regionale Karte</a>
+    </div>
+  </div>
+
   <div class="button-bar">
     <button onclick="sortByName()">Nach Name sortieren</button>
     <button onclick="sortByStand()">Nach Standnummer sortieren</button>
   </div>
+
   <div id="output"></div>
+
   <script>
     const vereine = [
       { name: "BCK Kiel", stand: 1, area: "Moorteichwiese", prefix: "MTW" },
@@ -150,7 +183,9 @@
       { name: "FTV/BVSH", stand: 9, area: "Rewe-Areal", prefix: "RA" },
       { name: "1. Latin Team Kiel e.V.", stand: 10, area: "Rewe-Areal", prefix: "RA" }
     ];
+
     let currentSort = 'stand';
+
     function renderList() {
       const container = document.getElementById("output");
       container.innerHTML = "";
@@ -185,16 +220,19 @@
         }
       }
     }
+
     function sortByName() {
       currentSort = "name";
       vereine.sort((a, b) => a.name.localeCompare(b.name));
       renderList();
     }
+
     function sortByStand() {
       currentSort = "stand";
       vereine.sort((a, b) => a.area.localeCompare(b.area) || a.stand - b.stand);
       renderList();
     }
+
     // Initial render
     sortByStand();
   </script>
