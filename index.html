@@ -16,16 +16,16 @@
       background: white;
       padding: 1rem;
       text-align: center;
-      border-bottom: 2px solid #0077cc;
+      border-bottom: 2px solid #0056b3;
     }
     .header img {
       max-width: 100%;
       height: auto;
-      margin: 0 0.5rem;
+      margin: 0 10px;
     }
     h1 {
-      color: #0077cc;
-      margin: 0.5rem 0;
+      color: #0056b3;
+      margin: 1rem 0;
     }
     .nav {
       display: flex;
@@ -35,22 +35,21 @@
       flex-wrap: wrap;
     }
     .nav a {
-      background: #0077cc;
+      background: #0056b3;
       color: white;
-      border: none;
-      border-radius: 10px;
-      padding: 0.6rem 1.2rem;
       text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
       font-weight: bold;
       transition: background 0.3s ease;
     }
     .nav a:hover {
-      background: #005fa3;
+      background: #003d80;
     }
     .button-bar {
       position: sticky;
       top: 0;
-      background: #0077cc;
+      background: #0056b3;
       padding: 1rem;
       z-index: 100;
       display: flex;
@@ -58,29 +57,27 @@
       gap: 10px;
       justify-content: center;
     }
-    .button-bar button, .nav a {
-      background: #0077cc;
-      color: white;
-      border: none;
+    .button-bar button {
+      background: white;
+      color: #0056b3;
+      border: 2px solid #0056b3;
       border-radius: 10px;
       padding: 0.8rem 1.5rem;
       font-size: 1.2rem;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
       min-width: 180px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
     }
-    .button-bar button:hover, .nav a:hover {
-      background: #005fa3;
+    .button-bar button:hover {
+      background: #003d80;
+      color: white;
     }
     .section {
       margin-bottom: 2rem;
       padding: 0 1rem;
     }
     h2 {
-      background-color: #0077cc;
+      background-color: #0056b3;
       color: white;
       padding: 0.5rem;
       border-radius: 5px;
@@ -97,14 +94,23 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     @media (max-width: 768px) {
-      .button-bar, .nav {
+      .button-bar {
         flex-direction: column;
       }
-      .button-bar button, .nav a {
+      .button-bar button {
         width: 100%;
         padding: 1rem;
         font-size: 1.2rem;
         min-height: 55px;
+      }
+      .nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav a {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
       }
       li {
         font-size: 1.1rem;
@@ -114,8 +120,10 @@
 </head>
 <body>
   <div class="header">
-    <img src="https://lsvtds.github.io/logo-tag-des-sport25.png" alt="Tag des Sports 2025" style="height: 80px;">
-    <img src="https://lsvtds.github.io/logo-lsv.jpg" alt="Landessportverband Schleswig-Holstein" style="height: 60px;">
+    <div>
+      <img src="https://lsvtds.github.io/logo-tag-des-sport25.png" alt="Tag des Sports 2025">
+      <img src="https://lsvtds.github.io/logo-lsv.jpg" alt="Landessportverband Schleswig-Holstein">
+    </div>
     <h1>Vereinsliste – Tag des Sports 2025</h1>
     <div class="nav">
       <a href="https://lsvtds.github.io/">Zurück zur Startseite</a>
