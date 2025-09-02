@@ -114,30 +114,110 @@
   </style>
 </head>
 <body>
- <div class="header">
-  <h1>Vereinsliste – Tag des Sports 2025</h1>
-</div>
+  <div class="header">
+    <h1>Vereinsliste – Tag des Sports 2025</h1>
+  </div>
   <div class="button-bar">
     <button onclick="sortByName()">Nach Name sortieren</button>
     <button onclick="sortByStand()">Nach Standnummer sortieren</button>
   </div>
-
   <div id="output"></div>
-
   <script>
     const vereine = [
-  // Rewe-Areal
+      // Moorteichwiese (MTW)
+      { name: "Sportverband Kiel e.V.", area: "Moorteichwiese", stand: 1, prefix: "MTW" },
+      { name: "SHFV", area: "Moorteichwiese", stand: 2, prefix: "MTW" },
+      { name: "Umkleidezelt", area: "Moorteichwiese", stand: 3, prefix: "MTW" },
+      { name: "Holstein Kiel", area: "Moorteichwiese", stand: 4, prefix: "MTW" },
+      { name: "Sportjugend", area: "Moorteichwiese", stand: 5, prefix: "MTW" },
+      { name: "Sportjugend", area: "Moorteichwiese", stand: 6, prefix: "MTW" },
+      { name: "Lubinus", area: "Moorteichwiese", stand: 7, prefix: "MTW" },
+      { name: "REWE", area: "Moorteichwiese", stand: 8, prefix: "MTW" },
+      { name: "LSV", area: "Moorteichwiese", stand: 9, prefix: "MTW" },
+      { name: "WeCycle", area: "Moorteichwiese", stand: 10, prefix: "MTW" },
+      { name: "Auto Centrum Lass", area: "Moorteichwiese", stand: 11, prefix: "MTW" },
+      { name: "Golfverband SH", area: "Moorteichwiese", stand: 12, prefix: "MTW" },
+      { name: "Remondis", area: "Moorteichwiese", stand: 13, prefix: "MTW" },
+      { name: "FT Vorwärts", area: "Moorteichwiese", stand: 14, prefix: "MTW" },
+      { name: "Sparkasse", area: "Moorteichwiese", stand: 15, prefix: "MTW" },
+      { name: "BİOG", area: "Moorteichwiese", stand: 16, prefix: "MTW" },
+      { name: "Ruderverband SH", area: "Moorteichwiese", stand: 17, prefix: "MTW" },
+      { name: "AOK", area: "Moorteichwiese", stand: 18, prefix: "MTW" },
+      { name: "BALTECKBARS e.V.", area: "Moorteichwiese", stand: 19, prefix: "MTW" },
+      { name: "Provinzial", area: "Moorteichwiese", stand: 22, prefix: "MTW" },
+      { name: "Lacrosse Club Kiel e.V.", area: "Moorteichwiese", stand: 23, prefix: "MTW" },
+      { name: "1. BCK", area: "Moorteichwiese", stand: 24, prefix: "MTW" },
+      { name: "Pferdesportverband SH", area: "Moorteichwiese", stand: 25, prefix: "MTW" },
+      { name: "ASCK", area: "Moorteichwiese", stand: 26, prefix: "MTW" },
+      { name: "Handballverband SH", area: "Moorteichwiese", stand: 27, prefix: "MTW" },
+      { name: "Tschip", area: "Moorteichwiese", stand: 28, prefix: "MTW" },
+      { name: "TuS Gaarden", area: "Moorteichwiese", stand: 29, prefix: "MTW" },
+      { name: "Norddeutscher Schützenbund von 1860 e.V.", area: "Moorteichwiese", stand: 30, prefix: "MTW" },
+      { name: "FT Adler", area: "Moorteichwiese", stand: 31, prefix: "MTW" },
+      { name: "Bühne", area: "Moorteichwiese", stand: 32, prefix: "MTW" },
+      { name: "Vereinservice", area: "Moorteichwiese", stand: 33, prefix: "MTW" },
+      { name: "Kiel Koalas AFC e.V.", area: "Moorteichwiese", stand: 34, prefix: "MTW" },
+      { name: "Integration durch Sport", area: "Moorteichwiese", stand: 35, prefix: "MTW" },
+      { name: "Rot-Schwarz Kiel", area: "Moorteichwiese", stand: 36, prefix: "MTW" },
 
+      // Haus des Sports (HDS)
+      { name: "AWO Landesverband SH", area: "Haus des Sports", stand: 1, prefix: "HDS" },
+      { name: "Tischtennis-Verband S-H", area: "Haus des Sports", stand: 2, prefix: "HDS" },
+      { name: "VR Hüpfburg", area: "Haus des Sports", stand: 3, prefix: "HDS" },
+      { name: "LSV", area: "Haus des Sports", stand: 4, prefix: "HDS" },
+      { name: "BSG Neumünster", area: "Haus des Sports", stand: 5, prefix: "HDS" },
+      { name: "PSV Kiel Wik", area: "Haus des Sports", stand: 6, prefix: "HDS" },
+      { name: "Bühne", area: "Haus des Sports", stand: 7, prefix: "HDS" },
+      { name: "LSV", area: "Haus des Sports", stand: 8, prefix: "HDS" },
+      { name: "Sport Thieme", area: "Haus des Sports", stand: 9, prefix: "HDS" },
+      { name: "ARAG", area: "Haus des Sports", stand: 10, prefix: "HDS" },
+      { name: "Kieler Buben", area: "Haus des Sports", stand: 11, prefix: "HDS" },
+      { name: "IKEA", area: "Haus des Sports", stand: 12, prefix: "HDS" },
+      { name: "LSV", area: "Haus des Sports", stand: 13, prefix: "HDS" },
+      { name: "LSV", area: "Haus des Sports", stand: 14, prefix: "HDS" },
+      { name: "SHTV", area: "Haus des Sports", stand: 15, prefix: "HDS" },
+      { name: "SK Doppelbauer Kiel", area: "Haus des Sports", stand: 16, prefix: "HDS" },
+      { name: "Verband Deutscher Sporttaucher", area: "Haus des Sports", stand: 17, prefix: "HDS" },
+      { name: "Rollkunstlauf", area: "Haus des Sports", stand: 18, prefix: "HDS" },
+      { name: "Kasperletheater", area: "Haus des Sports", stand: 19, prefix: "HDS" },
+      { name: "LSV / IKEA", area: "Haus des Sports", stand: 20, prefix: "HDS" },
+      { name: "Kindertaxi", area: "Haus des Sports", stand: 21, prefix: "HDS" },
 
-  // Winterbeker Weg
- 
+      // Winterbeker Weg (WW)
+      { name: "Motorsportverband SH", area: "Winterbeker Weg", stand: 1, prefix: "WW" },
+      { name: "Zahnärztekammer Schleswig-Holstein", area: "Winterbeker Weg", stand: 2, prefix: "WW" },
+      { name: "ETV", area: "Winterbeker Weg", stand: 3, prefix: "WW" },
+      { name: "KN", area: "Winterbeker Weg", stand: 4, prefix: "WW" },
+      { name: "Infus", area: "Winterbeker Weg", stand: 5, prefix: "WW" },
+      { name: "Integration durch Sport", area: "Winterbeker Weg", stand: 6, prefix: "WW" },
+      { name: "RBSV / RBSJ S-H", area: "Winterbeker Weg", stand: 7, prefix: "WW" },
+      { name: "REWE", area: "Winterbeker Weg", stand: 8, prefix: "WW" },
+      { name: "REWE", area: "Winterbeker Weg", stand: 9, prefix: "WW" },
+      { name: "Deutscher Behindertensportverband (DBS)", area: "Winterbeker Weg", stand: 10, prefix: "WW" },
+      { name: "LSV", area: "Winterbeker Weg", stand: 11, prefix: "WW" },
+      { name: "LSV", area: "Winterbeker Weg", stand: 12, prefix: "WW" },
+      { name: "Special Olympics Schleswig-Holstein", area: "Winterbeker Weg", stand: 13, prefix: "WW" },
+      { name: "Budomeile", area: "Winterbeker Weg", stand: 14, prefix: "WW" },
+      { name: "Kieler TB", area: "Winterbeker Weg", stand: 15, prefix: "WW" },
+      { name: "Kieler TB", area: "Winterbeker Weg", stand: 16, prefix: "WW" },
+      { name: "Holtenau Huskies", area: "Winterbeker Weg", stand: 17, prefix: "WW" },
+      { name: "LSV", area: "Winterbeker Weg", stand: 18, prefix: "WW" },
+      { name: "Kieler Squash Club", area: "Winterbeker Weg", stand: 19, prefix: "WW" },
+      { name: "Tennisverband Schleswig-Holstein e.V.", area: "Winterbeker Weg", stand: 20, prefix: "WW" },
+      { name: "HH Airport", area: "Winterbeker Weg", stand: 21, prefix: "WW" },
+      { name: "Nationale Anti-Doping Agentur", area: "Winterbeker Weg", stand: 22, prefix: "WW" },
+      { name: "SHKV", area: "Winterbeker Weg", stand: 23, prefix: "WW" },
+      { name: "TSV Kattendorf", area: "Winterbeker Weg", stand: 24, prefix: "WW" },
+      { name: "Sportmobil", area: "Winterbeker Weg", stand: 25, prefix: "WW" },
 
-  // Haus des Sports
- 
-
-  // Moorteichwiese
-];
-
+      // Rewe-Areal (RA)
+      { name: "BVSH", area: "Rewe-Areal", stand: 1, prefix: "RA" },
+      { name: "CCVSH e.V.", area: "Rewe-Areal", stand: 2, prefix: "RA" },
+      { name: "Baltic Storms", area: "Rewe-Areal", stand: 3, prefix: "RA" },
+      { name: "LSV", area: "Rewe-Areal", stand: 4, prefix: "RA" },
+      { name: "Bühne", area: "Rewe-Areal", stand: 5, prefix: "RA" },
+      { name: "REWE", area: "Rewe-Areal", stand: 6, prefix: "RA" },
+    ];
 
     let currentSort = 'stand';
 
@@ -146,9 +226,9 @@
       container.innerHTML = "";
       if (currentSort === "name") {
         const ul = document.createElement("ul");
-        vereine.forEach((item) => {
+        vereine.sort((a, b) => a.name.localeCompare(b.name)).forEach((item) => {
           const li = document.createElement("li");
-          li.textContent = `${item.name} (${item.area})`;
+          li.textContent = `${item.name} (${item.prefix} ${item.stand})`;
           ul.appendChild(li);
         });
         container.appendChild(ul);
@@ -165,7 +245,7 @@
           heading.textContent = area;
           section.appendChild(heading);
           const ul = document.createElement("ul");
-          list.forEach((item) => {
+          list.sort((a, b) => a.stand - b.stand).forEach((item) => {
             const li = document.createElement("li");
             li.textContent = `${item.prefix} ${item.stand}: ${item.name}`;
             ul.appendChild(li);
@@ -178,13 +258,11 @@
 
     function sortByName() {
       currentSort = "name";
-      vereine.sort((a, b) => a.name.localeCompare(b.name));
       renderList();
     }
 
     function sortByStand() {
       currentSort = "stand";
-      vereine.sort((a, b) => a.area.localeCompare(b.area) || a.stand - b.stand);
       renderList();
     }
 
