@@ -5,82 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vereinsliste – Tag des Sports 2026</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      padding: 0;
-      margin: 0;
-      color: #333;
+    /* =========================
+       Grundstyles (Farben & Schrift) – angepasst an Startseite
+       ========================= */
+    :root {
+      --primary-color: #004f9f;
+      --primary-light: #0077cc;
+      --primary-dark: #002d6d;
+      --background: #f9f9f9;
+      --text: #333;
+      --text-light: #666;
+      --white: #ffffff;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--background);
+      margin: 0;
+      padding: 0;
+    }
+    /* Header */
     .header {
-      background: white;
-      padding: 1rem;
       text-align: center;
-      border-bottom: 2px solid #004F9F;
+      padding: 1.5rem 1rem 1rem;
+      background-color: var(--white);
+      box-shadow: var(--box-shadow);
+      margin-bottom: 1.5rem;
     }
     h1 {
-      color: #004F9F;
-      margin: 1rem 0;
+      color: var(--primary-dark);
+      font-size: 2rem;
+      margin: 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--primary-light);
+      display: inline-block;
     }
+    /* Buttons (angepasst an Startseite) */
     .button-bar {
-      position: sticky;
-      top: 0;
-      background: #004F9F;
-      padding: 1rem;
-      z-index: 100;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
       justify-content: center;
+      gap: 1rem;
+      margin: 1rem auto;
+      max-width: 1000px;
+      padding: 0 1rem;
     }
-    .button-bar button {
-      background: white;
-      color: #004F9F;
-      border: 2px solid #004F9F;
-      border-radius: 10px;
-      padding: 0.8rem 1.5rem;
-      font-size: 1.2rem;
-      cursor: pointer;
+    .button {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+      color: var(--white);
+      border: none;
+      border-radius: var(--border-radius);
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
       transition: all 0.3s ease;
-      min-width: 180px;
+      box-shadow: var(--box-shadow);
+      cursor: pointer;
+      min-width: 200px;
     }
-    .button-bar button:hover {
-      background: #003d80;
-      color: white;
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
     }
+    /* Vereinsliste */
     .section {
-      margin-bottom: 2rem;
+      max-width: 1000px;
+      margin: 0 auto 2rem;
       padding: 0 1rem;
     }
     h2 {
-      background-color: #0056b3;
-      color: white;
-      padding: 0.5rem;
-      border-radius: 5px;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary-light), var(--primary-dark));
     }
     ul {
       list-style: none;
       padding: 0;
     }
     li {
-      background: white;
-      padding: 0.6rem 0.8rem;
-      margin: 0.3rem 0;
-      border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: var(--white);
+      padding: 0.8rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      font-size: 1rem;
     }
+    /* Responsive Anpassungen */
     @media (max-width: 768px) {
       .button-bar {
         flex-direction: column;
+        align-items: center;
       }
-      .button-bar button {
+      .button {
         width: 100%;
-        padding: 1rem;
-        font-size: 1.2rem;
-        min-height: 55px;
+        max-width: 300px;
+        margin-bottom: 0.5rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.3rem;
       }
       li {
         font-size: 1.1rem;
+        padding: 1rem;
+      }
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      .button {
+        padding: 1rem;
+        font-size: 1rem;
       }
     }
   </style>
@@ -90,14 +147,14 @@
     <h1>Vereinsliste – Tag des Sports 2026</h1>
   </div>
 
-  <!-- Auswahl-Buttons (ohne Text, ohne Trennlinie) -->
+  <!-- Buttons (gleiches Design wie Startseite) -->
   <div class="button-bar">
-    <button onclick="window.location.href='https://lsvtds.github.io/'">Zurück zur Startseite</button>
-    <button onclick="selectArea('all')">Aktionen in Schleswig-Holstein</button>
-    <button onclick="selectArea('Kiel')">Kiel</button>
+    <a href="https://lsvtds.github.io/" class="button">Zurück zur Startseite</a>
+    <button class="button" onclick="selectArea('all')">Aktionen in Schleswig-Holstein</button>
+    <button class="button" onclick="selectArea('Kiel')">Kiel</button>
   </div>
 
-  <!-- Vereinsliste (wird erst nach Auswahl angezeigt) -->
+  <!-- Vereinsliste -->
   <div id="output"></div>
 
   <script>
@@ -256,9 +313,6 @@
       currentSort = "stand";
       renderList();
     }
-
-    // Initial render (leer, da erst nach Auswahl gerendert wird)
-    document.getElementById("output").innerHTML = "";
   </script>
 </body>
 </html>
