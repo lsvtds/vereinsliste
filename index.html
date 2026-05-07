@@ -22,25 +22,6 @@
       color: #004F9F;
       margin: 1rem 0;
     }
-    .nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1rem 0;
-      flex-wrap: wrap;
-    }
-    .nav a {
-      background: #004F9F;
-      color: white;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    .nav a:hover {
-      background: #003d80;
-    }
     .button-bar {
       position: sticky;
       top: 0;
@@ -66,38 +47,6 @@
     .button-bar button:hover {
       background: #003d80;
       color: white;
-    }
-    .selection-section {
-      margin-bottom: 2rem;
-      padding: 1rem;
-      text-align: center;
-      background: white;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .selection-title {
-      color: #004F9F;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-    .selection-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .selection-button {
-      background: #004F9F;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .selection-button:hover {
-      background: #003d80;
     }
     .section {
       margin-bottom: 2rem;
@@ -130,22 +79,6 @@
         font-size: 1.2rem;
         min-height: 55px;
       }
-      .nav {
-        flex-direction: column;
-        align-items: center;
-      }
-      .nav a {
-        width: 100%;
-        text-align: center;
-        padding: 0.8rem;
-      }
-      .selection-buttons {
-        flex-direction: column;
-      }
-      .selection-button {
-        width: 100%;
-        margin-bottom: 0.5rem;
-      }
       li {
         font-size: 1.1rem;
       }
@@ -155,30 +88,17 @@
 <body>
   <div class="header">
     <h1>Vereinsliste – Tag des Sports 2026</h1>
-    <div class="nav">
-      <a href="https://lsvtds.github.io/">Zurück zur Startseite</a>
-      <a href="https://lsvtds.github.io/zentral.html">Zentrale Karte</a>
-      <a href="https://lsvtds.github.io/regional.html">Regionale Karte</a>
-    </div>
   </div>
 
-  <!-- Auswahl zwischen Aktionen in SH und Kiel -->
-  <div class="selection-section" id="selectionSection">
-    <div class="selection-title">Bitte wählen Sie einen Bereich aus:</div>
-    <div class="selection-buttons">
-      <button class="selection-button" onclick="selectArea('all')">Aktionen in Schleswig-Holstein</button>
-      <button class="selection-button" onclick="selectArea('Kiel')">Kiel</button>
-    </div>
+  <!-- Auswahl-Buttons (ohne Text, ohne Trennlinie) -->
+  <div class="button-bar">
+    <button onclick="window.location.href='https://lsvtds.github.io/'">Zurück zur Startseite</button>
+    <button onclick="selectArea('all')">Aktionen in Schleswig-Holstein</button>
+    <button onclick="selectArea('Kiel')">Kiel</button>
   </div>
 
   <!-- Vereinsliste (wird erst nach Auswahl angezeigt) -->
-  <div id="vereinslisteContainer" style="display: none;">
-    <div class="button-bar">
-      <button onclick="sortByName()">Nach Name sortieren</button>
-      <button onclick="sortByStand()">Nach Standnummer sortieren</button>
-    </div>
-    <div id="output"></div>
-  </div>
+  <div id="output"></div>
 
   <script>
     const vereine = [
@@ -277,13 +197,13 @@
     let currentSort = 'stand';
     let selectedArea = null;
 
+    // Funktion zum Auswählen des Bereichs
     function selectArea(area) {
       selectedArea = area;
-      document.getElementById("selectionSection").style.display = "none";
-      document.getElementById("vereinslisteContainer").style.display = "block";
       renderList();
     }
 
+    // Funktion zum Rendern der Liste
     function renderList() {
       const container = document.getElementById("output");
       container.innerHTML = "";
@@ -291,9 +211,7 @@
       // Filtere Vereine basierend auf der Auswahl
       let filteredVereine = vereine;
       if (selectedArea === "Kiel") {
-        filteredVereine = vereine.filter(v => v.area === "Moorteichwiese" || v.area === "Haus des Sports");
-      } else if (selectedArea === "all") {
-        filteredVereine = vereine;
+        filteredVereine = vereine.filter(v => v.area === "Moorteichwiese" || v.area === "Haus des Sports" || v.area === "Rewe-Areal" || v.area === "Winterbeker Weg");
       }
 
       if (currentSort === "name") {
@@ -328,6 +246,7 @@
       }
     }
 
+    // Sortierfunktionen
     function sortByName() {
       currentSort = "name";
       renderList();
@@ -337,6 +256,9 @@
       currentSort = "stand";
       renderList();
     }
+
+    // Initial render (leer, da erst nach Auswahl gerendert wird)
+    document.getElementById("output").innerHTML = "";
   </script>
 </body>
 </html>
