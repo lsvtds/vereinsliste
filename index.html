@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vereinsliste – Tag des Sports 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vereinsliste – Tag des Sports 2026</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -67,6 +67,38 @@
       background: #003d80;
       color: white;
     }
+    .selection-section {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      text-align: center;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .selection-title {
+      color: #004F9F;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .selection-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .selection-button {
+      background: #004F9F;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .selection-button:hover {
+      background: #003d80;
+    }
     .section {
       margin-bottom: 2rem;
       padding: 0 1rem;
@@ -107,6 +139,13 @@
         text-align: center;
         padding: 0.8rem;
       }
+      .selection-buttons {
+        flex-direction: column;
+      }
+      .selection-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
       li {
         font-size: 1.1rem;
       }
@@ -115,122 +154,158 @@
 </head>
 <body>
   <div class="header">
-    <h1>Vereinsliste – Tag des Sports 2025</h1>
+    <h1>Vereinsliste – Tag des Sports 2026</h1>
+    <div class="nav">
+      <a href="https://lsvtds.github.io/">Zurück zur Startseite</a>
+      <a href="https://lsvtds.github.io/zentral.html">Zentrale Karte</a>
+      <a href="https://lsvtds.github.io/regional.html">Regionale Karte</a>
+    </div>
   </div>
-  <div class="button-bar">
-    <button onclick="sortByName()">Nach Name sortieren</button>
-    <button onclick="sortByStand()">Nach Standnummer sortieren</button>
+
+  <!-- Auswahl zwischen Aktionen in SH und Kiel -->
+  <div class="selection-section" id="selectionSection">
+    <div class="selection-title">Bitte wählen Sie einen Bereich aus:</div>
+    <div class="selection-buttons">
+      <button class="selection-button" onclick="selectArea('all')">Aktionen in Schleswig-Holstein</button>
+      <button class="selection-button" onclick="selectArea('Kiel')">Kiel</button>
+    </div>
   </div>
-  <div id="output"></div>
+
+  <!-- Vereinsliste (wird erst nach Auswahl angezeigt) -->
+  <div id="vereinslisteContainer" style="display: none;">
+    <div class="button-bar">
+      <button onclick="sortByName()">Nach Name sortieren</button>
+      <button onclick="sortByStand()">Nach Standnummer sortieren</button>
+    </div>
+    <div id="output"></div>
+  </div>
+
   <script>
-const vereine = [
-  // Rewe-Areal
-  { name: "BVSH", area: "Rewe-Areal", stand: 1, prefix: "RA", aktion: "Basketball" },
-  { name: "CCVSH e.V.", area: "Rewe-Areal", stand: 2, prefix: "RA", aktion: "Cheerleading" },
-  { name: "Baltic Storms", area: "Rewe-Areal", stand: 3, prefix: "RA", aktion: "Floorball" },
-  { name: "Bühne", area: "Rewe-Areal", stand: 4, prefix: "RA", aktion: "Auftritte" },
-  { name: "REWE", area: "Rewe-Areal", stand: 5, prefix: "RA", aktion: "Kranballon" },
+    const vereine = [
+      // Rewe-Areal
+      { name: "BVSH", area: "Rewe-Areal", stand: 1, prefix: "RA", aktion: "Basketball" },
+      { name: "CCVSH e.V.", area: "Rewe-Areal", stand: 2, prefix: "RA", aktion: "Cheerleading" },
+      { name: "Baltic Storms", area: "Rewe-Areal", stand: 3, prefix: "RA", aktion: "Floorball" },
+      { name: "Bühne", area: "Rewe-Areal", stand: 4, prefix: "RA", aktion: "Auftritte" },
+      { name: "REWE", area: "Rewe-Areal", stand: 5, prefix: "RA", aktion: "Kranballon" },
 
-  // Winterbeker Weg
-  { name: "Motorsportverband SH", area: "Winterbeker Weg", stand: 1, prefix: "WW", aktion: "Motorsport" },
-  { name: "Zahnärztekammer Schleswig-Holstein", area: "Winterbeker Weg", stand: 2, prefix: "WW", aktion: "Zähne putzen" },
-  { name: "ETV", area: "Winterbeker Weg", stand: 3, prefix: "WW", aktion: "Drachenboot" },
-  { name: "Zeitschätzparcours", area: "Winterbeker Weg", stand: 4, prefix: "WW", aktion: "" },
-  { name: "Kieler Nachrichten", area: "Winterbeker Weg", stand: 5, prefix: "WW", aktion: "" },
-  { name: "Integration durch Sport", area: "Winterbeker Weg", stand: 6, prefix: "WW", aktion: "Mitmachaktionen, Infos" },
-  { name: "RBSV / RBSJ S-H", area: "Winterbeker Weg", stand: 7, prefix: "WW", aktion: "Rollstuhl" },
-  { name: "REWE", area: "Winterbeker Weg", stand: 8, prefix: "WW", aktion: "Subsoccer Bolzbox, Smoothie-Bike" },
-  { name: "REWE", area: "Winterbeker Weg", stand: 9, prefix: "WW", aktion: "Foodtruck" },
-  { name: "Deutscher Behindertensportverband (DBS)", area: "Winterbeker Weg", stand: 10, prefix: "WW", aktion: "Torwandschießen mit Sehbehinderung" },
-  { name: "LSV", area: "Winterbeker Weg", stand: 11, prefix: "WW", aktion: "Prothesenschule, Rollstuhl-Parcours" },
-  { name: "Special Olympics Schleswig-Holstein", area: "Winterbeker Weg", stand: 12, prefix: "WW", aktion: "Cage Football" },
-  { name: "Special Olympics Schleswig-Holstein", area: "Winterbeker Weg", stand: 13, prefix: "WW", aktion: "Verschiedenes" },
-  { name: "Budomeile", area: "Winterbeker Weg", stand: 14, prefix: "WW", aktion: "" },
-  { name: "Kieler TB", area: "Winterbeker Weg", stand: 15, prefix: "WW", aktion: "Leichtathletik, Basketball, Turnen, Einrad, Volleyball, Tanzen, Jazz" },
-  { name: "InTuS", area: "Winterbeker Weg", stand: 16, prefix: "WW", aktion: "Kanusport, Goalball, Cornhole" },
-  { name: "LSV", area: "Winterbeker Weg", stand: 17, prefix: "WW", aktion: "Info Point" },
-  { name: "Kieler Squash Club", area: "Winterbeker Weg", stand: 18, prefix: "WW", aktion: "Squash" },
-  { name: "Tennisverband Schleswig-Holstein e.V.", area: "Winterbeker Weg", stand: 19, prefix: "WW", aktion: "Tennis" },
-  { name: "HH Airport", area: "Winterbeker Weg", stand: 20, prefix: "WW", aktion: "Kletterwand" },
-  { name: "Nationale Anti-Doping Agentur", area: "Winterbeker Weg", stand: 21, prefix: "WW", aktion: "Prävention" },
-  { name: "SHKV", area: "Winterbeker Weg", stand: 22, prefix: "WW", aktion: "Kegeln" },
-  { name: "TSV Kattendorf", area: "Winterbeker Weg", stand: 23, prefix: "WW", aktion: "Pickleball" },
-  { name: "Sportmobil", area: "Winterbeker Weg", stand: 24, prefix: "WW", aktion: "" },
+      // Winterbeker Weg
+      { name: "Motorsportverband SH", area: "Winterbeker Weg", stand: 1, prefix: "WW", aktion: "Motorsport" },
+      { name: "Zahnärztekammer Schleswig-Holstein", area: "Winterbeker Weg", stand: 2, prefix: "WW", aktion: "Zähne putzen" },
+      { name: "ETV", area: "Winterbeker Weg", stand: 3, prefix: "WW", aktion: "Drachenboot" },
+      { name: "Zeitschätzparcours", area: "Winterbeker Weg", stand: 4, prefix: "WW", aktion: "" },
+      { name: "Kieler Nachrichten", area: "Winterbeker Weg", stand: 5, prefix: "WW", aktion: "" },
+      { name: "Integration durch Sport", area: "Winterbeker Weg", stand: 6, prefix: "WW", aktion: "Mitmachaktionen, Infos" },
+      { name: "RBSV / RBSJ S-H", area: "Winterbeker Weg", stand: 7, prefix: "WW", aktion: "Rollstuhl" },
+      { name: "REWE", area: "Winterbeker Weg", stand: 8, prefix: "WW", aktion: "Subsoccer Bolzbox, Smoothie-Bike" },
+      { name: "REWE", area: "Winterbeker Weg", stand: 9, prefix: "WW", aktion: "Foodtruck" },
+      { name: "Deutscher Behindertensportverband (DBS)", area: "Winterbeker Weg", stand: 10, prefix: "WW", aktion: "Torwandschießen mit Sehbehinderung" },
+      { name: "LSV", area: "Winterbeker Weg", stand: 11, prefix: "WW", aktion: "Prothesenschule, Rollstuhl-Parcours" },
+      { name: "Special Olympics Schleswig-Holstein", area: "Winterbeker Weg", stand: 12, prefix: "WW", aktion: "Cage Football" },
+      { name: "Special Olympics Schleswig-Holstein", area: "Winterbeker Weg", stand: 13, prefix: "WW", aktion: "Verschiedenes" },
+      { name: "Budomeile", area: "Winterbeker Weg", stand: 14, prefix: "WW", aktion: "" },
+      { name: "Kieler TB", area: "Winterbeker Weg", stand: 15, prefix: "WW", aktion: "Leichtathletik, Basketball, Turnen, Einrad, Volleyball, Tanzen, Jazz" },
+      { name: "InTuS", area: "Winterbeker Weg", stand: 16, prefix: "WW", aktion: "Kanusport, Goalball, Cornhole" },
+      { name: "LSV", area: "Winterbeker Weg", stand: 17, prefix: "WW", aktion: "Info Point" },
+      { name: "Kieler Squash Club", area: "Winterbeker Weg", stand: 18, prefix: "WW", aktion: "Squash" },
+      { name: "Tennisverband Schleswig-Holstein e.V.", area: "Winterbeker Weg", stand: 19, prefix: "WW", aktion: "Tennis" },
+      { name: "HH Airport", area: "Winterbeker Weg", stand: 20, prefix: "WW", aktion: "Kletterwand" },
+      { name: "Nationale Anti-Doping Agentur", area: "Winterbeker Weg", stand: 21, prefix: "WW", aktion: "Prävention" },
+      { name: "SHKV", area: "Winterbeker Weg", stand: 22, prefix: "WW", aktion: "Kegeln" },
+      { name: "TSV Kattendorf", area: "Winterbeker Weg", stand: 23, prefix: "WW", aktion: "Pickleball" },
+      { name: "Sportmobil", area: "Winterbeker Weg", stand: 24, prefix: "WW", aktion: "" },
 
-  // Haus des Sports
-  { name: "AWO Landesverband SH", area: "Haus des Sports", stand: 1, prefix: "HDS", aktion: "Torwand, Airhockey, Seilspringen" },
-  { name: "Tischtennis-Verband S-H", area: "Haus des Sports", stand: 2, prefix: "HDS", aktion: "Tischtennis" },
-  { name: "VR Hüpfburg", area: "Haus des Sports", stand: 3, prefix: "HDS", aktion: "" },
-  { name: "LSV", area: "Haus des Sports", stand: 4, prefix: "HDS", aktion: "Bungeerun" },
-  { name: "BSG Neumünster", area: "Haus des Sports", stand: 5, prefix: "HDS", aktion: "Rolliparcour" },
-  { name: "PSV Kiel Wik", area: "Haus des Sports", stand: 6, prefix: "HDS", aktion: "Lichtschwert" },
-  { name: "Bühne", area: "Haus des Sports", stand: 7, prefix: "HDS", aktion: "" },
-  { name: "LSV", area: "Haus des Sports", stand: 8, prefix: "HDS", aktion: "Infopoint" },
-  { name: "Sport Thieme", area: "Haus des Sports", stand: 9, prefix: "HDS", aktion: "Mini-TT, Slackline, Disc Golf" },
-  { name: "ARAG", area: "Haus des Sports", stand: 10, prefix: "HDS", aktion: "Reaktionsspiel" },
-  { name: "SHTV", area: "Haus des Sports", stand: 11, prefix: "HDS", aktion: "Geräteturnen" },
-  { name: "IKEA", area: "Haus des Sports", stand: 12, prefix: "HDS", aktion: "Kinderschminken" },
-  { name: "LSV", area: "Haus des Sports", stand: 13, prefix: "HDS", aktion: "Parksportabzeichen" },
-  { name: "LSV", area: "Haus des Sports", stand: 14, prefix: "HDS", aktion: "Hüpfburg" },
-  { name: "Kieler Buben", area: "Haus des Sports", stand: 15, prefix: "HDS", aktion: "Skate" },
-  { name: "SK Doppelbauer Kiel", area: "Haus des Sports", stand: 16, prefix: "HDS", aktion: "Schach" },
-  { name: "Verband Deutscher Sporttaucher", area: "Haus des Sports", stand: 17, prefix: "HDS", aktion: "Tauchen" },
-  { name: "Info Betriebssport", area: "Haus des Sports", stand: 18, prefix: "HDS", aktion: "Puppentheater" },
-  { name: "LSV / IKEA", area: "Haus des Sports", stand: 19, prefix: "HDS", aktion: "Kinderschminken" },
-  { name: "Rollbahn für Kinder", area: "Haus des Sports", stand: 20, prefix: "HDS", aktion: "" },
-  { name: "LSV", area: "Haus des Sports", stand: 21, prefix: "HDS", aktion: "Kindertaxi" },
+      // Haus des Sports
+      { name: "AWO Landesverband SH", area: "Haus des Sports", stand: 1, prefix: "HDS", aktion: "Torwand, Airhockey, Seilspringen" },
+      { name: "Tischtennis-Verband S-H", area: "Haus des Sports", stand: 2, prefix: "HDS", aktion: "Tischtennis" },
+      { name: "VR Hüpfburg", area: "Haus des Sports", stand: 3, prefix: "HDS", aktion: "" },
+      { name: "LSV", area: "Haus des Sports", stand: 4, prefix: "HDS", aktion: "Bungeerun" },
+      { name: "BSG Neumünster", area: "Haus des Sports", stand: 5, prefix: "HDS", aktion: "Rolliparcour" },
+      { name: "PSV Kiel Wik", area: "Haus des Sports", stand: 6, prefix: "HDS", aktion: "Lichtschwert" },
+      { name: "Bühne", area: "Haus des Sports", stand: 7, prefix: "HDS", aktion: "" },
+      { name: "LSV", area: "Haus des Sports", stand: 8, prefix: "HDS", aktion: "Infopoint" },
+      { name: "Sport Thieme", area: "Haus des Sports", stand: 9, prefix: "HDS", aktion: "Mini-TT, Slackline, Disc Golf" },
+      { name: "ARAG", area: "Haus des Sports", stand: 10, prefix: "HDS", aktion: "Reaktionsspiel" },
+      { name: "SHTV", area: "Haus des Sports", stand: 11, prefix: "HDS", aktion: "Geräteturnen" },
+      { name: "IKEA", area: "Haus des Sports", stand: 12, prefix: "HDS", aktion: "Kinderschminken" },
+      { name: "LSV", area: "Haus des Sports", stand: 13, prefix: "HDS", aktion: "Parksportabzeichen" },
+      { name: "LSV", area: "Haus des Sports", stand: 14, prefix: "HDS", aktion: "Hüpfburg" },
+      { name: "Kieler Buben", area: "Haus des Sports", stand: 15, prefix: "HDS", aktion: "Skate" },
+      { name: "SK Doppelbauer Kiel", area: "Haus des Sports", stand: 16, prefix: "HDS", aktion: "Schach" },
+      { name: "Verband Deutscher Sporttaucher", area: "Haus des Sports", stand: 17, prefix: "HDS", aktion: "Tauchen" },
+      { name: "Info Betriebssport", area: "Haus des Sports", stand: 18, prefix: "HDS", aktion: "Puppentheater" },
+      { name: "LSV / IKEA", area: "Haus des Sports", stand: 19, prefix: "HDS", aktion: "Kinderschminken" },
+      { name: "Rollbahn für Kinder", area: "Haus des Sports", stand: 20, prefix: "HDS", aktion: "" },
+      { name: "LSV", area: "Haus des Sports", stand: 21, prefix: "HDS", aktion: "Kindertaxi" },
 
-  // Moorteichwiese
-  { name: "Sportverband Kiel e.V.", area: "Moorteichwiese", stand: 1, prefix: "MTW", aktion: "Deutsches Sportabzeichen" },
-  { name: "SHFV", area: "Moorteichwiese", stand: 2, prefix: "MTW", aktion: "Inklusionsturnier" },
-  { name: "Holstein Kiel", area: "Moorteichwiese", stand: 3, prefix: "MTW", aktion: "Fußballschule" },
-  { name: "Sportjugend", area: "Moorteichwiese", stand: 4, prefix: "MTW", aktion: "Minisportabzeichen" },
-  { name: "Sportjugend", area: "Moorteichwiese", stand: 5, prefix: "MTW", aktion: "Charity Lauf" },
-  { name: "Lubinus", area: "Moorteichwiese", stand: 6, prefix: "MTW", aktion: "Massagen" },
-  { name: "REWE", area: "Moorteichwiese", stand: 7, prefix: "MTW", aktion: "Verpflegung" },
-  { name: "LSV", area: "Moorteichwiese", stand: 8, prefix: "MTW", aktion: "Infostand" },
-  { name: "WeCycle", area: "Moorteichwiese", stand: 9, prefix: "MTW", aktion: "Radsport" },
-  { name: "Golfverband SH", area: "Moorteichwiese", stand: 11, prefix: "MTW", aktion: "Golf" },
-  { name: "Remondis", area: "Moorteichwiese", stand: 12, prefix: "MTW", aktion: "Recycling Rally" },
-  { name: "FT Vorwärts", area: "Moorteichwiese", stand: 13, prefix: "MTW", aktion: "Darts" },
-  { name: "Sparkasse", area: "Moorteichwiese", stand: 14, prefix: "MTW", aktion: "Kaffeeboot" },
-  { name: "BİOG", area: "Moorteichwiese", stand: 15, prefix: "MTW", aktion: "Erlebnisland 'Kinder stark machen'" },
-  { name: "Ruderverband SH", area: "Moorteichwiese", stand: 16, prefix: "MTW", aktion: "Rudern" },
-  { name: "AOK", area: "Moorteichwiese", stand: 17, prefix: "MTW", aktion: "Reaktionsspiel, Agility-Fußball" },
-  { name: "BALTECKBARS e.V.", area: "Moorteichwiese", stand: 18, prefix: "MTW", aktion: "Calisthenics" },
-  { name: "Provinzial", area: "Moorteichwiese", stand: 19, prefix: "MTW", aktion: "Wurfmessung" },
-  { name: "Lacrosse Club Kiel e.V.", area: "Moorteichwiese", stand: 20, prefix: "MTW", aktion: "Jugend Lacrosse" },
-  { name: "1. BCK", area: "Moorteichwiese", stand: 21, prefix: "MTW", aktion: "Roundnet" },
-  { name: "Pferdesportverband SH", area: "Moorteichwiese", stand: 22, prefix: "MTW", aktion: "Rund ums Pferd" },
-  { name: "ASCK", area: "Moorteichwiese", stand: 23, prefix: "MTW", aktion: "Cheerleading" },
-  { name: "Handballverband SH", area: "Moorteichwiese", stand: 24, prefix: "MTW", aktion: "Handball" },
-  { name: "Tschip", area: "Moorteichwiese", stand: 25, prefix: "MTW", aktion: "" },
-  { name: "TuS Gaarden", area: "Moorteichwiese", stand: 26, prefix: "MTW", aktion: "Jugger" },
-  { name: "Norddeutscher Schützenbund von 1860 e.V.", area: "Moorteichwiese", stand: 27, prefix: "MTW", aktion: "Bogenschießen" },
-  { name: "FT Adler", area: "Moorteichwiese", stand: 28, prefix: "MTW", aktion: "Rugby, Quadball, Turnen, Gesundheitssport" },
-  { name: "Bühne", area: "Moorteichwiese", stand: 29, prefix: "MTW", aktion: "" },
-  { name: "Vereinservice", area: "Moorteichwiese", stand: 30, prefix: "MTW", aktion: "" },
-  { name: "Kiel Koalas AFC e.V.", area: "Moorteichwiese", stand: 31, prefix: "MTW", aktion: "Australien Football" },
-  { name: "Integration durch Sport", area: "Moorteichwiese", stand: 32, prefix: "MTW", aktion: "Module" },
-  { name: "IDS", area: "Moorteichwiese", stand: 33, prefix: "MTW", aktion: "" },
-  { name: "Rot-Schwarz Kiel", area: "Moorteichwiese", stand: 34, prefix: "MTW", aktion: "Baseball" }
-];
+      // Moorteichwiese
+      { name: "Sportverband Kiel e.V.", area: "Moorteichwiese", stand: 1, prefix: "MTW", aktion: "Deutsches Sportabzeichen" },
+      { name: "SHFV", area: "Moorteichwiese", stand: 2, prefix: "MTW", aktion: "Inklusionsturnier" },
+      { name: "Holstein Kiel", area: "Moorteichwiese", stand: 3, prefix: "MTW", aktion: "Fußballschule" },
+      { name: "Sportjugend", area: "Moorteichwiese", stand: 4, prefix: "MTW", aktion: "Minisportabzeichen" },
+      { name: "Sportjugend", area: "Moorteichwiese", stand: 5, prefix: "MTW", aktion: "Charity Lauf" },
+      { name: "Lubinus", area: "Moorteichwiese", stand: 6, prefix: "MTW", aktion: "Massagen" },
+      { name: "REWE", area: "Moorteichwiese", stand: 7, prefix: "MTW", aktion: "Verpflegung" },
+      { name: "LSV", area: "Moorteichwiese", stand: 8, prefix: "MTW", aktion: "Infostand" },
+      { name: "WeCycle", area: "Moorteichwiese", stand: 9, prefix: "MTW", aktion: "Radsport" },
+      { name: "Golfverband SH", area: "Moorteichwiese", stand: 11, prefix: "MTW", aktion: "Golf" },
+      { name: "Remondis", area: "Moorteichwiese", stand: 12, prefix: "MTW", aktion: "Recycling Rally" },
+      { name: "FT Vorwärts", area: "Moorteichwiese", stand: 13, prefix: "MTW", aktion: "Darts" },
+      { name: "Sparkasse", area: "Moorteichwiese", stand: 14, prefix: "MTW", aktion: "Kaffeeboot" },
+      { name: "BİOG", area: "Moorteichwiese", stand: 15, prefix: "MTW", aktion: "Erlebnisland 'Kinder stark machen'" },
+      { name: "Ruderverband SH", area: "Moorteichwiese", stand: 16, prefix: "MTW", aktion: "Rudern" },
+      { name: "AOK", area: "Moorteichwiese", stand: 17, prefix: "MTW", aktion: "Reaktionsspiel, Agility-Fußball" },
+      { name: "BALTECKBARS e.V.", area: "Moorteichwiese", stand: 18, prefix: "MTW", aktion: "Calisthenics" },
+      { name: "Provinzial", area: "Moorteichwiese", stand: 19, prefix: "MTW", aktion: "Wurfmessung" },
+      { name: "Lacrosse Club Kiel e.V.", area: "Moorteichwiese", stand: 20, prefix: "MTW", aktion: "Jugend Lacrosse" },
+      { name: "1. BCK", area: "Moorteichwiese", stand: 21, prefix: "MTW", aktion: "Roundnet" },
+      { name: "Pferdesportverband SH", area: "Moorteichwiese", stand: 22, prefix: "MTW", aktion: "Rund ums Pferd" },
+      { name: "ASCK", area: "Moorteichwiese", stand: 23, prefix: "MTW", aktion: "Cheerleading" },
+      { name: "Handballverband SH", area: "Moorteichwiese", stand: 24, prefix: "MTW", aktion: "Handball" },
+      { name: "Tschip", area: "Moorteichwiese", stand: 25, prefix: "MTW", aktion: "" },
+      { name: "TuS Gaarden", area: "Moorteichwiese", stand: 26, prefix: "MTW", aktion: "Jugger" },
+      { name: "Norddeutscher Schützenbund von 1860 e.V.", area: "Moorteichwiese", stand: 27, prefix: "MTW", aktion: "Bogenschießen" },
+      { name: "FT Adler", area: "Moorteichwiese", stand: 28, prefix: "MTW", aktion: "Rugby, Quadball, Turnen, Gesundheitssport" },
+      { name: "Bühne", area: "Moorteichwiese", stand: 29, prefix: "MTW", aktion: "" },
+      { name: "Vereinservice", area: "Moorteichwiese", stand: 30, prefix: "MTW", aktion: "" },
+      { name: "Kiel Koalas AFC e.V.", area: "Moorteichwiese", stand: 31, prefix: "MTW", aktion: "Australien Football" },
+      { name: "Integration durch Sport", area: "Moorteichwiese", stand: 32, prefix: "MTW", aktion: "Module" },
+      { name: "IDS", area: "Moorteichwiese", stand: 33, prefix: "MTW", aktion: "" },
+      { name: "Rot-Schwarz Kiel", area: "Moorteichwiese", stand: 34, prefix: "MTW", aktion: "Baseball" }
+    ];
 
     let currentSort = 'stand';
+    let selectedArea = null;
+
+    function selectArea(area) {
+      selectedArea = area;
+      document.getElementById("selectionSection").style.display = "none";
+      document.getElementById("vereinslisteContainer").style.display = "block";
+      renderList();
+    }
 
     function renderList() {
       const container = document.getElementById("output");
       container.innerHTML = "";
+
+      // Filtere Vereine basierend auf der Auswahl
+      let filteredVereine = vereine;
+      if (selectedArea === "Kiel") {
+        filteredVereine = vereine.filter(v => v.area === "Moorteichwiese" || v.area === "Haus des Sports");
+      } else if (selectedArea === "all") {
+        filteredVereine = vereine;
+      }
+
       if (currentSort === "name") {
         const ul = document.createElement("ul");
-        vereine.sort((a, b) => a.name.localeCompare(b.name)).forEach((item) => {
+        filteredVereine.sort((a, b) => a.name.localeCompare(b.name)).forEach((item) => {
           const li = document.createElement("li");
           li.textContent = `${item.name} (${item.prefix} ${item.stand})`;
           ul.appendChild(li);
         });
         container.appendChild(ul);
       } else {
-        const grouped = vereine.reduce((acc, item) => {
+        const grouped = filteredVereine.reduce((acc, item) => {
           if (!acc[item.area]) acc[item.area] = [];
           acc[item.area].push(item);
           return acc;
@@ -262,9 +337,6 @@ const vereine = [
       currentSort = "stand";
       renderList();
     }
-
-    // Initial render
-    sortByStand();
   </script>
 </body>
 </html>
