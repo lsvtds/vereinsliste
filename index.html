@@ -3,168 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Vereinsliste – Tag des Sports 2026</title>
 
   <style>
     /* =========================
-       Grundstyles
+       Grundlayout wie Startseite
        ========================= */
-    :root {
-      --primary-color: #004f9f;
-      --primary-light: #0077cc;
-      --primary-dark: #002d6d;
-      --background: #f9f9f9;
-      --text: #333;
-      --text-light: #666;
-      --white: #ffffff;
-      --border-radius: 8px;
-      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
 
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background-color: var(--background);
+    body, html {
       margin: 0;
       padding: 0;
+      min-height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
     }
 
-    /* Header */
     .header {
-      text*align: center;
-      padding: 1.5r*m 1rem 1rem;
-      background-colo*: var(--white);
-      box-shadow: var(--box-shadow);
-      margin-bottom: 1.5rem;
+      text-align: center;
+      padding: 15px;
+      background-color: white;
+      border-bottom: 2px solid #004F9F;
     }
 
     h1 {
-      color: var(--primary-dark);
-      font-size: 2rem;
+      color: #004F9F;
       margin: 0;
-      padding-bottom: 0.5rem;
-      border-bottom: 3px solid var(--primary-light);
-      display: inline-block;
+      font-size: 1.5rem;
     }
 
-    /* Buttons oben */
-    .button-bar {
-      display:*flex;
+    /* =========================
+       Buttons wie Startseite
+       ========================= */
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 15px;
       flex-wrap: wrap;
-     *justify-content: center;
-     *gap:*1rem;
-      margin: 1rem auto;
-   *  max-width: 1000px;
-      padding* 0 1rem;
     }
 
     .button {
-    * background* linear-gradient(135deg, var(--pri*ary-light), var(--primary-dark));
-*     color: var(--white);
-      bo*der: none;
-      border-radius: va*(--border-radius);
-      padding: *rem 2rem;
-      font-size: 1.1rem;*      font-weight: 600;
-      text*decoration: none;
-      text-align* center;
-      transition: all 0.3* ease;
-      box-shadow: var(--box*shadow);
+      padding: 12px 20px;
+      background: #004F9F;
+      color: white;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
-  *   min-width: 200px;
+      font-size: 1rem;
+      font-weight: bold;
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      text-decoration: none;
+      box-sizing: border-box;
+      max-width: 420px;
     }
 
-    .b*tton:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+    .button:hover {
+      background: #003d80;
     }
 
     .button.active {
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
-      outline: 3px solid rgba(0, 119, 204, 0.25);
+      background: #003d80;
     }
 
-    /* Suchfeld */
+    /* =========================
+       Suchfeld
+       ========================= */
+
     .search-container {
       max-width: 1000px;
-      margin: 1rem auto 1.5rem;
-      padding: 0 1rem;
+      margin: 10px auto 5px;
+      padding: 0 15px;
+      box-sizing: border-box;
     }
 
     #searchInput {
       width: 100%;
-      padding: 1rem;
-      font-size: 1.1rem;
-      border: 2px solid var(--primary-light);
-      border-radius: var(--border-radius);
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: 2px solid #004F9F;
+      border-radius: 5px;
       box-sizing: border-box;
-      background: var(--white);
-      box-shadow: var(--box-shadow);
+      background: white;
     }
 
     #searchInput:focus {
       outline: none;
-      border-color: var(--primary-dark);
+      border-color: #003d80;
+      box-shadow: 0 0 0 2px rgba(0, 79, 159, 0.15);
     }
 
     .search-hint {
       max-width: 1000px;
-      margin: -0.75rem auto 1.5rem;
-      padding: 0 1rem;
-      color: var(--text-light);
-      font-size: 0.95rem;
+      margin: 5px auto 20px;
+      padding: 0 15px;
+      font-size: 0.9rem;
+      color: #666;
       text-align: center;
+      box-sizing: border-box;
     }
 
-    /* Status / Hinweise */
-    .status-message {
+    /* =========================
+       Vereinsliste
+       ========================= */
+
+    #output {
       max-width: 1000px;
-      margin: 1.5rem auto;
-      padding: 1rem;
-      background: var(--white);
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      text-align: center;
-      color: var(--text-light);
+      margin: 0 auto;
+      padding: 0 15px 20px;
+      box-sizing: border-box;
     }
 
-    .error-message {
-      max-width: 1000px;
-      margin: 1.5rem auto;
-      padding: 1rem;
-      background: #fff3f3;
-      border: 2px solid #cc0000;
-      border-radius: var(--border-radius);
-      color: #990000;
-      text-align: center;
-    }
-
-    /* Vereinsliste */
     .section {
-      max-width: 1000px;
-      margin: 0 auto 2rem;
-      padding: 0 1rem;
+      margin-bottom: 25px;
     }
 
     h2 {
-      color: var(--primary-color);
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 0.5rem;
-    }
-
-    h2::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--primary-light), var(--primary-dark));
+      color: #004F9F;
+      font-size: 1.3rem;
+      margin: 20px 0 10px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #004F9F;
     }
 
     ul {
@@ -174,70 +137,107 @@
     }
 
     li {
-      background: var(--white);
-      padding: 0.8rem 1rem;
-      margin: 0.5rem 0;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
+      background: white;
+      padding: 12px 15px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border-left: 5px solid #004F9F;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
       font-size: 1rem;
+    }
+
+    .verein-name {
+      font-weight: bold;
+      color: #333;
     }
 
     .aktion {
       display: block;
-      margin-top: 0.25rem;
-      color: var(--text-light);
+      margin-top: 4px;
+      color: #666;
       font-size: 0.95rem;
     }
 
-    /* Footer-Button-Bereich */
-    .footer-button-bar {
-      display: flex;
-      justify-content: center;
-      margin: 2rem auto 1rem;
-      max-width: 1000px;
-      padding: 0 1rem;
+    .status-message {
+      background: white;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+      text-align: center;
+      color: #666;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     }
 
-    /* Responsive Anpassungen */
+    .error-message {
+      background: #fff3f3;
+      color: #990000;
+      border: 2px solid #cc0000;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    /* =========================
+       Footer
+       ========================= */
+
+    .footer-button-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 15px 25px;
+      flex-wrap: wrap;
+    }
+
+    .footer {
+      text-align: center;
+      color: #666;
+      font-size: 0.85rem;
+      padding: 10px 15px 20px;
+    }
+
+    /* =========================
+       Mobile Ansicht
+       ========================= */
+
     @media (max-width: 768px) {
-      .button-bar,
-      .footer-button-bar {
+      .button-container,
+      .footer-button-container {
         flex-direction: column;
-        align-items: center;
       }
 
       .button {
         width: 100%;
-        max-width: 300px;
-        margin-bottom: 0.5rem;
+        max-width: none;
+        margin-bottom: 10px;
       }
 
       h1 {
-        font-size: 1.8rem;
+        font-size: 1.35rem;
       }
 
       h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
 
       li {
-        font-size: 1.1rem;
-        padding: 1rem;
-      }
-
-      #searchInput {
         font-size: 1rem;
-        padding: 1rem;
+        padding: 12px;
       }
     }
 
     @media (max-width: 480px) {
       h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
       }
 
       .button {
-        padding: 1rem;
+        font-size: 1rem;
+        padding: 12px 15px;
+      }
+
+      #searchInput {
         font-size: 1rem;
       }
     }
@@ -245,12 +245,13 @@
 </head>
 
 <body>
+
   <div class="header">
     <h1>Vereinsliste – Tag des Sports 2026</h1>
   </div>
 
   <!-- Buttons oben -->
-  <div class="button-bar">
+  <div class="button-container">
     <button id="regionalButton" class="button" onclick="selectArea('regional')">
       Aktionen in Schleswig-Holstein
     </button>
@@ -260,7 +261,7 @@
     </button>
   </div>
 
-  <!-- Suche -->
+  <!-- Suchfeld -->
   <div class="search-container">
     <input
       type="text"
@@ -279,9 +280,15 @@
     <div class="status-message">Vereinsdaten werden geladen ...</div>
   </div>
 
-  <!-- Button unten: Zurück zur Startseite -->
-  <div class="footer-button-bar">
-    <a href="https://lsvtds.github.io/" class="button">Zurück zur Startseite</a>
+  <!-- Button unten -->
+  <div class="footer-button-container">
+    <a href="https://lsvtds.github.io/" class="button">
+      Zurück zur Startseite
+    </a>
+  </div>
+
+  <div class="footer">
+    © 2026 Landessportverband Schleswig-Holstein
   </div>
 
   <script>
@@ -347,6 +354,11 @@
         document.getElementById("kielButton").classList.add("active");
       }
 
+      const searchInput = document.getElementById("searchInput");
+      if (searchInput) {
+        searchInput.value = "";
+      }
+
       renderList();
     }
 
@@ -394,6 +406,7 @@
         }
 
         acc[areaName].push(item);
+
         return acc;
       }, {});
 
@@ -413,7 +426,7 @@
             const standB = Number(b.stand) || 0;
             return standA - standB;
           })
-          .forEach((item) => {
+          .forEach(item => {
             const li = document.createElement("li");
 
             const prefix = item.prefix || "";
@@ -421,8 +434,14 @@
             const name = item.name || "Ohne Namen";
             const aktion = item.aktion || "";
 
+            let standText = "";
+
+            if (prefix || stand) {
+              standText = `${prefix} ${stand}: `;
+            }
+
             li.innerHTML = `
-              <strong>${prefix} ${stand}: ${name}</strong>
+              <span class="verein-name">${standText}${name}</span>
               ${aktion ? `<span class="aktion">${aktion}</span>` : ""}
             `;
 
@@ -436,5 +455,6 @@
 
     loadData();
   </script>
+
 </body>
 </html>
