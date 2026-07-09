@@ -1,9 +1,24 @@
 [
   {
-    "name": "Testverein Kiel",
+    "name": "BVSH",
     "area": "Rewe-Areal",
     "stand": 1,
     "prefix": "RA",
-    "aktion": "Testaktion"
+    "aktion": "Basketball"
+  },
+  {
+    "name": "CCVSH e.V.",
+    "area": "Rewe-Areal",
+    "stand": 2,
+    "prefix": "RA",
+    "aktion": "Cheerleading"
+  },
+  {
+    "name": "Holstein Kiel",
+    "area": "Moorteichwiese",
+    "stand": 3,
+    "prefix": "MTW",
+    "aktion": "Fußballschule"
   }
+]
 ]
