@@ -1,16 +1,252 @@
 [
   {
-    "name": "Testverein Schleswig-Holstein",
+    "name": "SV Freie Waldorfschule Flensburg",
     "area": "Flensburg",
-    "stand": 1,
-    "prefix": "FL",
-    "aktion": "Regionaler Sportaktionstag"
+    "aktion": "8. Flensburg liebt dich Marathon"
   },
   {
-    "name": "TSV Musterstadt",
-    "area": "Lübeck",
-    "stand": 2,
-    "prefix": "HL",
-    "aktion": "Turnen und Bewegung"
+    "name": "Kreissportverband Dithmarschen e.V.",
+    "area": "Meldorf",
+    "aktion": "Mitmachangebote und sportliche Präsentationen"
+  },
+  {
+    "name": "Luftsportverein Südtondern e.V.",
+    "area": "Aventoft",
+    "aktion": "Segelfliegen - Vorstellen, Erklären, Mitfliegen"
+  },
+  {
+    "name": "Großenasper Sportverein e.V.",
+    "area": "Großenaspe",
+    "aktion": "Finalrunde der Deutschen Faustball Senioren Meisterschaft in den Altersklassen Männer 35 / 45 / 55 und Frauen 30"
+  },
+  {
+    "name": "CHUNG MU Elmshorn",
+    "area": "Elmshorn",
+    "aktion": "Family-Day, Lehrgang, Mitmach- Kennenlerntraining für Jedermann"
+  },
+  {
+    "name": "Seglervereinigung Malente Gremsmühlen e.V.",
+    "area": "Malente",
+    "aktion": "Segel-Theorie, Seemannsknoten, Mitsegelgelegenheit"
+  },
+  {
+    "name": "Deutsch-Französischer Segelclub",
+    "area": "Lübeck-Travemünde",
+    "aktion": "Tag der offenen Tür, Schnuppersegeln"
+  },
+  {
+    "name": "TSV Borsfleth e. V.",
+    "area": "Borsfleth",
+    "aktion": "Schnuppertag anlässlich 100jähriges Bestehen des Vereines, Meet & Move Tischtennis"
+  },
+  {
+    "name": "1. PBV Pinneberg",
+    "area": "Pinneberg",
+    "aktion": "Tag der offenen Tür, Ligaspiele, Billard als Sport kennenlernen"
+  },
+  {
+    "name": "Lauenburger Sport-Vereinigung e.V.",
+    "area": "Lauenburg",
+    "aktion": "Abschlussveranstaltung Deutsches Sportabzeichen"
+  },
+  {
+    "name": "TSV Vorwärts 1888 e.V. Hademarschen + SV Merkur Hademarschen",
+    "area": "Hanerau-Hademarschen",
+    "aktion": "Einblick in unser Sportangebot - Mitmachen erwünscht"
+  },
+  {
+    "name": "SG Wasserratten Norderstedt",
+    "area": "Norderstedt",
+    "aktion": "Der 19. Norderstedt-Triathlon findet am 06. September als krönender Abschluss der Norderstedter Sportwochen auf dem Gelände des Norderstedter Stadtparks statt. Die Veranstaltung der SG Wasserratten Norderstedt e.V. richtet sich an alle, die Spaß am Schwimmen, Radfahren und Laufen haben. Vom Freizeit- bis zum Leistungssportler für jeden ist etwas dabei. 1.600 Startplätze stehen auch in diesem Jahr wieder zur Verfügung. Damit ist der Norderstedt Triathlon einer der größten vereinsgeführten Veranstaltungen in Norddeutschland. Zur Auswahl stehen folgende Wettkämpfe. Kinder-, Jugend- und Junioren Triathlon My First Triathlon – für Erststarter und absolute Triathlon Einsteiger 200 – 10 – 2,5 Mini Triathlon: für alle, die langsam beginnen möchten und schon etwas Triathlon Erfahrung haben. 200 – 10 – 2,5 Volkstriathlon: 500 – 20 – 5 Olympischer Triathlon: 1.500 – 40 – 10 Staffeltriathlon: Volks- und Olympische Distanz Landesmeisterschaften, Ligawettkämpfe Hamburg und Schleswig-Holstein. Das Schwimmen findet im Stadtparksee statt, die Wechselzone befindet sich auf der Promenade im Stadtpark, die Radstrecke wird über die Schleswig-Holstein-Straße führen und gelaufen wird um den Stadtparksee. Anmelden kann man sich unter www.norderstedt-triathlon.de"
+  },
+  {
+    "name": "Schleswig-Holsteinischer Fußballverband",
+    "area": "Malente",
+    "aktion": "3. Fabian-Thiesen-Cup. Großes Walking Football Turnier mit 20+ Mannschaften aus dem ganzen Landesgebiet sowie aus anderen Verbänden."
+  },
+  {
+    "name": "Kreissportjugend Dithmarschen",
+    "area": "Meldorf",
+    "aktion": "Charitylauf"
+  },
+  {
+    "name": "Wassersportclub am Wittensee WSCW",
+    "area": "Groß Wittensee",
+    "aktion": "Segelregatta"
+  },
+  {
+    "name": "SV Meldorf Seals",
+    "area": "Meldorf",
+    "aktion": "Wir bieten wie jedes Jahr Wasserball zum Schnuppern für alle an. Ob einfach nur mal aufs Tor werfen oder gleich in einem kleinen Spiel erproben - alles ist möglich. Die Aktion findet in der Regel im Flachwasser statt, so dass auch Nichtschwimmer*innen daran teilnehmen können."
+  },
+  {
+    "name": "TuS Rotenhof von 1919 e. V.",
+    "area": "Rendsburg",
+    "aktion": "Jugendfußballspiele mit Aktionen"
+  },
+  {
+    "name": "TSC Rot-Gold Schönkirchen",
+    "area": "Schönkirchen",
+    "aktion": "Workshops"
+  },
+  {
+    "name": "Segeberger Bürgerschützen Traventhal",
+    "area": "Traventhal",
+    "aktion": "Tag der offenen Tür"
+  },
+  {
+    "name": "SV Kochendorf",
+    "area": "Kochendorf",
+    "aktion": "Gemeinsam Spiel, Spaß und Sport"
+  },
+  {
+    "name": "MTV Wilster",
+    "area": "Wilster",
+    "aktion": "In Wilster ist Bauernmarkt. Der MTV Wilster ist mit dabei und bietet ein buntes Bewegungsprogramm für Jung und Alt auf dem Colosseumplatz (Outdoor) an"
+  },
+  {
+    "name": "TC Lütjenburg",
+    "area": "Lütjenburg",
+    "aktion": "Offenes Tennisturnier"
+  },
+  {
+    "name": "RSG Schmalensee",
+    "area": "Schmalensee",
+    "aktion": "Vorführung verschiedener Turnierdiziplinen mit Blick hinter die Kulissen, Ponyreiten und Spiele für jedermann, Sporteinheit für jedermann (Crossfit goes Reithalle)"
+  },
+  {
+    "name": "Kyudojo Kiel e.V.",
+    "area": "Kiel",
+    "aktion": "Kyudo Schießvorführungen - Mitmachaktion japanisches Bogenschießen nach Unterweisung von erfahren Schützen auf kurze Distanz - Vorherige Übungen an einem Übungsgerät (Zwille) - Unterweisung am japanischen Langbogen nach Sicherheitsbelehrung. - Kurze Vorträge über Geschichte und das japanische Bogenschießen in der Gegenwart. - Material wird gestellt."
+  },
+  {
+    "name": "ESV Neustadt in Holstein",
+    "area": "Neustadt in Holstein",
+    "aktion": "Tischtennis-Schnuppertraining in den Sporthallen der Jacob-Lienau Gemeinschaftsschule (ehemals Hochtor Grundschule). Kinder, Erwachsene, Familien oder Paare, Einheimische und Urlauber: Alle sind herzlich willkommen! Hallenschuhe sind ein Muss, Sportkleidung ist von Vorteil, Schläger und Bälle können ausgeliehen werden. Wer möchte, kann sich von uns Tipps geben lassen. Wer lieber ungestört spielen möchte, darf auch das. Verpflegung und Getränke bitte selbst mitbringen. Kontakt: ESV Neustadt e.V., www.esv-neustadt.de, Christiane Lehmann, Tel. 0 45 61 - 7 12 77"
+  },
+  {
+    "name": "SSC Hagen Ahrensburg",
+    "area": "Ahrensburg",
+    "aktion": "Sommerfest / Vereinsolympiade"
+  },
+  {
+    "name": "MTV Wilster",
+    "area": "Wilster",
+    "aktion": "Der MTV Wilster wird im Rahmen des Bauernmarktes in Wilster wieder tolle Spiel und Spassaktionen für Groß und Klein anbieten. Von Hula Hoop, Spaßkämpfen auf dem Balancierbalken, Stelzen laufen über Barfussparkour hin zum Turnen an der Reckstange. Für alle ist etwas dabei."
+  },
+  {
+    "name": "Hundesportgemeinschaft Süsel e. V.",
+    "area": "Süsel",
+    "aktion": "Im Rahmen einer Obedienceprüfung wird ein Tag der offenen Tür stattfinden."
+  },
+  {
+    "name": "TSV Klausdorf e.V.",
+    "area": "Schwentinental",
+    "aktion": "Jugendversammlung 10 - 11 Uhr, offenes Sportangebot und Laufgruppe 11 - 14 Uhr"
+  },
+  {
+    "name": "Rantrumer Reitverein e.V.",
+    "area": "Rantrum",
+    "aktion": "Tag der offenen Tür mit Mitmachaktion und Flohmarkt"
+  },
+  {
+    "name": "Sportvereinigung Friedrichsort von 1890 e. V.",
+    "area": "Kiel-Friedrichsort",
+    "aktion": "Auf dem Rewe-Parkplatz stellt die SV Friedrichsort verschiedene Sportangebote vor und bietet kreative Mitmachaktionen an. Am Vormittag findet zur Eröffnung der SVF-Bambini-Lauf entlang der Friedrichsorter Straße für Kinder zwischen 6-12 Jahren statt."
+  },
+  {
+    "name": "Husumer Schützengilde von 1586 e.V.",
+    "area": "Husum",
+    "aktion": "Mitmachangebote und Schnuppertraining: „Sport sehen, Sport erleben, Sport ausprobieren.“"
+  },
+  {
+    "name": "Turn- und Sportvereinigung Gaarden von 1875 e.V.",
+    "area": "Kiel",
+    "aktion": "Landesmeisterschaft im Olympisches Ringen"
+  },
+  {
+    "name": "Landesverband für Modernen Fünfkampf",
+    "area": "Wentorf",
+    "aktion": "Landesmeisterschaft Laser Run - alle Altersklassen"
+  },
+  {
+    "name": "Turn- und Sportverein Jevenstedt von 1919 e.V.",
+    "area": "Jevenstedt",
+    "aktion": "Wir bieten allen Kindern/Jugendlichen/ Erwachsenen an diesem Tag ein buntes Programm und einen Einblick ins Gerätturnen, Minitrampolinturnen, Akrobatik und Zumba für Jedermann. Dabei liegt uns Inklusion besonders am Herzen - denn wir sind der Meinung, dass Sport für alle da ist, ganz egal, mit welchen Einschränkungen man vielleicht im Leben zu kämpfen hat. Sport vereint und keiner wird ausgeschlossen."
+  },
+  {
+    "name": "Dartclub Nordangeln e.V.",
+    "area": "Grundhof",
+    "aktion": "Treffsicher, spielerisch und für alle offen! Beim „Tag des Sports“ laden wir alle Interessierten ein, die Sportart Dart kennenzulernen und direkt auszuprobieren. Egal ob Anfängerin, Freizeitspielerin oder einfach neugierig: An unserer Dart-Station stehen Spaß, Konzentration und gemeinsames Mitmachen im Mittelpunkt. Neben einem kleinen Dart-Turnier gibt es verschiedene Mitmach-Spiele, bei denen Zielgenauigkeit, ruhige Hand und ein gutes Auge gefragt sind. Die Spiele sind so gestaltet, dass Kinder, Jugendliche und Erwachsene schnell einsteigen können. Wer möchte, erhält eine kurze Einführung in die Grundregeln, Wurftechnik und Sicherheitsregeln. Das erwartet Dich: Kennenlernen der Sportart Dart; Kleine Mitmach-Spiele für unterschiedliche Altersgruppen; Lockeres Dart-Turnier mit Spaßfaktor; Tipps zur Wurftechnik und zum sicheren Spielen; Angebot für Einsteiger*innen und Neugierige"
+  },
+  {
+    "name": "Sport-Club Itzehoe e.V.",
+    "area": "Itzehoe",
+    "aktion": "Vorstellung & Mitmachangebote der Sportarten und der Kursangebotes unseres Vereins"
+  },
+  {
+    "name": "SVT Neumünster von 1911 e.V.",
+    "area": "Neumünster",
+    "aktion": "Offenes Probetraining"
+  },
+  {
+    "name": "Sportverein Grün-Weiß Bovenau e.V.",
+    "area": "Bovenau",
+    "aktion": "Aufbau des beliebtesten Hindernisses aus 2026. Mit Bällebad und Hüpfburg."
+  },
+  {
+    "name": "SV Müssen",
+    "area": "Müssen",
+    "aktion": "Mitmachangebot für jung & alt aus allen Sparten"
+  },
+  {
+    "name": "TSV Malente",
+    "area": "Malente",
+    "aktion": "Parallel zur diesjährigen Jugend-Vereinsmeisterschaft besteht für Kinder und Erwachsene die Möglichkeit, Tischtennis zu spielen. Bitte Sportkleidung anziehen und Hallenschuhe mitbringen. Tischtennis Schläger und Bälle können kostenfrei ausgeliehen werden."
+  },
+  {
+    "name": "Kodokan e.V. Norderstedt",
+    "area": "Norderstedt",
+    "aktion": "Kodokan e.V. stellt das Sportangebot des Vereins vor: Einfach mitmachen und ausprobieren!"
+  },
+  {
+    "name": "Freie Turnerschaft Neumünster e.V.",
+    "area": "Neumünster",
+    "aktion": "Sommerfest"
+  },
+  {
+    "name": "Kreissportverband Rendsburg-Eckernförde",
+    "area": "Eckernförde",
+    "aktion": "Familienolympiade"
+  },
+  {
+    "name": "SG Seth von 1910 e.V.",
+    "area": "Seth",
+    "aktion": "Abenteuer Turnhalle: Bewegungslandschaft & Einrad-Schnuppern"
+  },
+  {
+    "name": "Kreissportverband Ostholstein e. V.",
+    "area": "Stockelsdorf/Dissau",
+    "aktion": "Breitensporttag für die ganze Familie"
+  },
+  {
+    "name": "Kaltenkirchener Turnerschaft",
+    "area": "Kaltenkirchen",
+    "aktion": "Kitu am Tag des Sports"
+  },
+  {
+    "name": "Stadt Elmshorn",
+    "area": "Elmshorn",
+    "aktion": "Mitmachangebote und Informationsstände"
+  },
+  {
+    "name": "STV Sörup 1911 e.V.",
+    "area": "Sörup",
+    "aktion": "Tag des Sports"
+  },
+  {
+    "name": "FC Union Tornesch von 1921 e.V.",
+    "area": "Tornesch",
+    "aktion": "Verschiedene Fußball-Mitmach Aktionen, wie Soccer Cage, Fußball-Tennis, Teqball und mehr. Evtl. Spendenlauf (TBD)"
   }
 ]
