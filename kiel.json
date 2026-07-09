@@ -1,1 +1,9 @@
-1 []
+[
+  {
+    "name": "Testverein Kiel",
+    "area": "Rewe-Areal",
+    "stand": 1,
+    "prefix": "RA",
+    "aktion": "Testaktion"
+  }
+]

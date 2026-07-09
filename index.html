@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vereinsliste – Tag des Sports 2026</title>
+
   <style>
     /* =========================
-       Grundstyles (Farben & Schrift) – angepasst an Startseite
+       Grundstyles
        ========================= */
     :root {
       --primary-color: #004f9f;
@@ -19,6 +20,7 @@
       --border-radius: 8px;
       --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       line-height: 1.6;
@@ -27,14 +29,16 @@
       margin: 0;
       padding: 0;
     }
+
     /* Header */
     .header {
-      text-align: center;
-      padding: 1.5rem 1rem 1rem;
-      background-color: var(--white);
+      text*align: center;
+      padding: 1.5r*m 1rem 1rem;
+      background-colo*: var(--white);
       box-shadow: var(--box-shadow);
       margin-bottom: 1.5rem;
     }
+
     h1 {
       color: var(--primary-dark);
       font-size: 2rem;
@@ -43,42 +47,106 @@
       border-bottom: 3px solid var(--primary-light);
       display: inline-block;
     }
-    /* Buttons (angepasst an Startseite) */
+
+    /* Buttons oben */
     .button-bar {
-      display: flex;
+      display:*flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
+     *justify-content: center;
+     *gap:*1rem;
       margin: 1rem auto;
-      max-width: 1000px;
-      padding: 0 1rem;
+   *  max-width: 1000px;
+      padding* 0 1rem;
     }
+
     .button {
-      background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
-      color: var(--white);
-      border: none;
-      border-radius: var(--border-radius);
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: var(--box-shadow);
+    * background* linear-gradient(135deg, var(--pri*ary-light), var(--primary-dark));
+*     color: var(--white);
+      bo*der: none;
+      border-radius: va*(--border-radius);
+      padding: *rem 2rem;
+      font-size: 1.1rem;*      font-weight: 600;
+      text*decoration: none;
+      text-align* center;
+      transition: all 0.3* ease;
+      box-shadow: var(--box*shadow);
       cursor: pointer;
-      min-width: 200px;
+  *   min-width: 200px;
     }
-    .button:hover {
+
+    .b*tton:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
     }
+
+    .button.active {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+      outline: 3px solid rgba(0, 119, 204, 0.25);
+    }
+
+    /* Suchfeld */
+    .search-container {
+      max-width: 1000px;
+      margin: 1rem auto 1.5rem;
+      padding: 0 1rem;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border: 2px solid var(--primary-light);
+      border-radius: var(--border-radius);
+      box-sizing: border-box;
+      background: var(--white);
+      box-shadow: var(--box-shadow);
+    }
+
+    #searchInput:focus {
+      outline: none;
+      border-color: var(--primary-dark);
+    }
+
+    .search-hint {
+      max-width: 1000px;
+      margin: -0.75rem auto 1.5rem;
+      padding: 0 1rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    /* Status / Hinweise */
+    .status-message {
+      max-width: 1000px;
+      margin: 1.5rem auto;
+      padding: 1rem;
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      text-align: center;
+      color: var(--text-light);
+    }
+
+    .error-message {
+      max-width: 1000px;
+      margin: 1.5rem auto;
+      padding: 1rem;
+      background: #fff3f3;
+      border: 2px solid #cc0000;
+      border-radius: var(--border-radius);
+      color: #990000;
+      text-align: center;
+    }
+
     /* Vereinsliste */
     .section {
       max-width: 1000px;
       margin: 0 auto 2rem;
       padding: 0 1rem;
     }
+
     h2 {
       color: var(--primary-color);
       font-size: 1.5rem;
@@ -88,6 +156,7 @@
       display: inline-block;
       padding-bottom: 0.5rem;
     }
+
     h2::after {
       content: "";
       position: absolute;
@@ -97,10 +166,13 @@
       height: 2px;
       background: linear-gradient(90deg, var(--primary-light), var(--primary-dark));
     }
+
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
+
     li {
       background: var(--white);
       padding: 0.8rem 1rem;
@@ -109,6 +181,14 @@
       box-shadow: var(--box-shadow);
       font-size: 1rem;
     }
+
+    .aktion {
+      display: block;
+      margin-top: 0.25rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
     /* Footer-Button-Bereich */
     .footer-button-bar {
       display: flex;
@@ -117,32 +197,45 @@
       max-width: 1000px;
       padding: 0 1rem;
     }
+
     /* Responsive Anpassungen */
     @media (max-width: 768px) {
-      .button-bar, .footer-button-bar {
+      .button-bar,
+      .footer-button-bar {
         flex-direction: column;
         align-items: center;
       }
+
       .button {
         width: 100%;
         max-width: 300px;
         margin-bottom: 0.5rem;
       }
+
       h1 {
         font-size: 1.8rem;
       }
+
       h2 {
         font-size: 1.3rem;
       }
+
       li {
         font-size: 1.1rem;
         padding: 1rem;
       }
+
+      #searchInput {
+        font-size: 1rem;
+        padding: 1rem;
+      }
     }
+
     @media (max-width: 480px) {
       h1 {
         font-size: 1.5rem;
       }
+
       .button {
         padding: 1rem;
         font-size: 1rem;
@@ -150,19 +243,41 @@
     }
   </style>
 </head>
+
 <body>
   <div class="header">
     <h1>Vereinsliste – Tag des Sports 2026</h1>
   </div>
 
-  <!-- Buttons oben: Aktionen in SH & Kiel -->
+  <!-- Buttons oben -->
   <div class="button-bar">
-    <button class="button" onclick="selectArea('all')">Aktionen in Schleswig-Holstein</button>
-    <button class="button" onclick="selectArea('Kiel')">Kiel</button>
+    <button id="regionalButton" class="button" onclick="selectArea('regional')">
+      Aktionen in Schleswig-Holstein
+    </button>
+
+    <button id="kielButton" class="button active" onclick="selectArea('kiel')">
+      Kiel
+    </button>
+  </div>
+
+  <!-- Suche -->
+  <div class="search-container">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="🔍 Verein, Sportart oder Aktion suchen..."
+      oninput="renderList()"
+    />
+  </div>
+
+  <div class="search-hint">
+    Suche z. B. nach „Basketball“, „Holstein“, „Tennis“, „Golf“ oder „REWE“.
   </div>
 
   <!-- Vereinsliste -->
-  <div id="output"></div>
+  <div id="output">
+    <div class="status-message">Vereinsdaten werden geladen ...</div>
+  </div>
 
   <!-- Button unten: Zurück zur Startseite -->
   <div class="footer-button-bar">
@@ -170,161 +285,156 @@
   </div>
 
   <script>
-    const vereine = [
-      // Rewe-Areal
-      { name: "BVSH", area: "Rewe-Areal", stand: 1, prefix: "RA", aktion: "Basketball" },
-      { name: "CCVSH e.V.", area: "Rewe-Areal", stand: 2, prefix: "RA", aktion: "Cheerleading" },
-      { name: "Baltic Storms", area: "Rewe-Areal", stand: 3, prefix: "RA", aktion: "Floorball" },
-      { name: "Bühne", area: "Rewe-Areal", stand: 4, prefix: "RA", aktion: "Auftritte" },
-      { name: "REWE", area: "Rewe-Areal", stand: 5, prefix: "RA", aktion: "Kranballon" },
+    let vereine = [];
+    let selectedArea = "kiel";
 
-      // Winterbeker Weg
-      { name: "Motorsportverband SH", area: "Winterbeker Weg", stand: 1, prefix: "WW", aktion: "Motorsport" },
-      { name: "Zahnärztekammer Schleswig-Holstein", area: "Winterbeker Weg", stand: 2, prefix: "WW", aktion: "Zähne putzen" },
-      { name: "ETV", area: "Winterbeker Weg", stand: 3, prefix: "WW", aktion: "Drachenboot" },
-      { name: "Zeitschätzparcours", area: "Winterbeker Weg", stand: 4, prefix: "WW", aktion: "" },
-      { name: "Kieler Nachrichten", area: "Winterbeker Weg", stand: 5, prefix: "WW", aktion: "" },
-      { name: "Integration durch Sport", area: "Winterbeker Weg", stand: 6, prefix: "WW", aktion: "Mitmachaktionen, Infos" },
-      { name: "RBSV / RBSJ S-H", area: "Winterbeker Weg", stand: 7, prefix: "WW", aktion: "Rollstuhl" },
-      { name: "REWE", area: "Winterbeker Weg", stand: 8, prefix: "WW", aktion: "Subsoccer Bolzbox, Smoothie-Bike" },
-      { name: "REWE", area: "Winterbeker Weg", stand: 9, prefix: "WW", aktion: "Foodtruck" },
-      { name: "Deutscher Behindertensportverband (DBS)", area: "Winterbeker Weg", stand: 10, prefix: "WW", aktion: "Torwandschießen mit Sehbehinderung" },
-      { name: "LSV", area: "Winterbeker Weg", stand: 11, prefix: "WW", aktion: "Prothesenschule, Rollstuhl-Parcours" },
-      { name: "Special Olympics Schleswig-Holstein", area: "Winterbeker Weg", stand: 12, prefix: "WW", aktion: "Cage Football" },
-      { name: "Special Olympics Schleswig-Holstein", area: "Winterbeker Weg", stand: 13, prefix: "WW", aktion: "Verschiedenes" },
-      { name: "Budomeile", area: "Winterbeker Weg", stand: 14, prefix: "WW", aktion: "" },
-      { name: "Kieler TB", area: "Winterbeker Weg", stand: 15, prefix: "WW", aktion: "Leichtathletik, Basketball, Turnen, Einrad, Volleyball, Tanzen, Jazz" },
-      { name: "InTuS", area: "Winterbeker Weg", stand: 16, prefix: "WW", aktion: "Kanusport, Goalball, Cornhole" },
-      { name: "LSV", area: "Winterbeker Weg", stand: 17, prefix: "WW", aktion: "Info Point" },
-      { name: "Kieler Squash Club", area: "Winterbeker Weg", stand: 18, prefix: "WW", aktion: "Squash" },
-      { name: "Tennisverband Schleswig-Holstein e.V.", area: "Winterbeker Weg", stand: 19, prefix: "WW", aktion: "Tennis" },
-      { name: "HH Airport", area: "Winterbeker Weg", stand: 20, prefix: "WW", aktion: "Kletterwand" },
-      { name: "Nationale Anti-Doping Agentur", area: "Winterbeker Weg", stand: 21, prefix: "WW", aktion: "Prävention" },
-      { name: "SHKV", area: "Winterbeker Weg", stand: 22, prefix: "WW", aktion: "Kegeln" },
-      { name: "TSV Kattendorf", area: "Winterbeker Weg", stand: 23, prefix: "WW", aktion: "Pickleball" },
-      { name: "Sportmobil", area: "Winterbeker Weg", stand: 24, prefix: "WW", aktion: "" },
+    async function loadData() {
+      const container = document.getElementById("output");
 
-      // Haus des Sports
-      { name: "AWO Landesverband SH", area: "Haus des Sports", stand: 1, prefix: "HDS", aktion: "Torwand, Airhockey, Seilspringen" },
-      { name: "Tischtennis-Verband S-H", area: "Haus des Sports", stand: 2, prefix: "HDS", aktion: "Tischtennis" },
-      { name: "VR Hüpfburg", area: "Haus des Sports", stand: 3, prefix: "HDS", aktion: "" },
-      { name: "LSV", area: "Haus des Sports", stand: 4, prefix: "HDS", aktion: "Bungeerun" },
-      { name: "BSG Neumünster", area: "Haus des Sports", stand: 5, prefix: "HDS", aktion: "Rolliparcour" },
-      { name: "PSV Kiel Wik", area: "Haus des Sports", stand: 6, prefix: "HDS", aktion: "Lichtschwert" },
-      { name: "Bühne", area: "Haus des Sports", stand: 7, prefix: "HDS", aktion: "" },
-      { name: "LSV", area: "Haus des Sports", stand: 8, prefix: "HDS", aktion: "Infopoint" },
-      { name: "Sport Thieme", area: "Haus des Sports", stand: 9, prefix: "HDS", aktion: "Mini-TT, Slackline, Disc Golf" },
-      { name: "ARAG", area: "Haus des Sports", stand: 10, prefix: "HDS", aktion: "Reaktionsspiel" },
-      { name: "SHTV", area: "Haus des Sports", stand: 11, prefix: "HDS", aktion: "Geräteturnen" },
-      { name: "IKEA", area: "Haus des Sports", stand: 12, prefix: "HDS", aktion: "Kinderschminken" },
-      { name: "LSV", area: "Haus des Sports", stand: 13, prefix: "HDS", aktion: "Parksportabzeichen" },
-      { name: "LSV", area: "Haus des Sports", stand: 14, prefix: "HDS", aktion: "Hüpfburg" },
-      { name: "Kieler Buben", area: "Haus des Sports", stand: 15, prefix: "HDS", aktion: "Skate" },
-      { name: "SK Doppelbauer Kiel", area: "Haus des Sports", stand: 16, prefix: "HDS", aktion: "Schach" },
-      { name: "Verband Deutscher Sporttaucher", area: "Haus des Sports", stand: 17, prefix: "HDS", aktion: "Tauchen" },
-      { name: "Info Betriebssport", area: "Haus des Sports", stand: 18, prefix: "HDS", aktion: "Puppentheater" },
-      { name: "LSV / IKEA", area: "Haus des Sports", stand: 19, prefix: "HDS", aktion: "Kinderschminken" },
-      { name: "Rollbahn für Kinder", area: "Haus des Sports", stand: 20, prefix: "HDS", aktion: "" },
-      { name: "LSV", area: "Haus des Sports", stand: 21, prefix: "HDS", aktion: "Kindertaxi" },
+      try {
+        const kielResponse = await fetch("kiel.json");
+        const regionalResponse = await fetch("regional.json");
 
-      // Moorteichwiese
-      { name: "Sportverband Kiel e.V.", area: "Moorteichwiese", stand: 1, prefix: "MTW", aktion: "Deutsches Sportabzeichen" },
-      { name: "SHFV", area: "Moorteichwiese", stand: 2, prefix: "MTW", aktion: "Inklusionsturnier" },
-      { name: "Holstein Kiel", area: "Moorteichwiese", stand: 3, prefix: "MTW", aktion: "Fußballschule" },
-      { name: "Sportjugend", area: "Moorteichwiese", stand: 4, prefix: "MTW", aktion: "Minisportabzeichen" },
-      { name: "Sportjugend", area: "Moorteichwiese", stand: 5, prefix: "MTW", aktion: "Charity Lauf" },
-      { name: "Lubinus", area: "Moorteichwiese", stand: 6, prefix: "MTW", aktion: "Massagen" },
-      { name: "REWE", area: "Moorteichwiese", stand: 7, prefix: "MTW", aktion: "Verpflegung" },
-      { name: "LSV", area: "Moorteichwiese", stand: 8, prefix: "MTW", aktion: "Infostand" },
-      { name: "WeCycle", area: "Moorteichwiese", stand: 9, prefix: "MTW", aktion: "Radsport" },
-      { name: "Golfverband SH", area: "Moorteichwiese", stand: 11, prefix: "MTW", aktion: "Golf" },
-      { name: "Remondis", area: "Moorteichwiese", stand: 12, prefix: "MTW", aktion: "Recycling Rally" },
-      { name: "FT Vorwärts", area: "Moorteichwiese", stand: 13, prefix: "MTW", aktion: "Darts" },
-      { name: "Sparkasse", area: "Moorteichwiese", stand: 14, prefix: "MTW", aktion: "Kaffeeboot" },
-      { name: "BİOG", area: "Moorteichwiese", stand: 15, prefix: "MTW", aktion: "Erlebnisland 'Kinder stark machen'" },
-      { name: "Ruderverband SH", area: "Moorteichwiese", stand: 16, prefix: "MTW", aktion: "Rudern" },
-      { name: "AOK", area: "Moorteichwiese", stand: 17, prefix: "MTW", aktion: "Reaktionsspiel, Agility-Fußball" },
-      { name: "BALTECKBARS e.V.", area: "Moorteichwiese", stand: 18, prefix: "MTW", aktion: "Calisthenics" },
-      { name: "Provinzial", area: "Moorteichwiese", stand: 19, prefix: "MTW", aktion: "Wurfmessung" },
-      { name: "Lacrosse Club Kiel e.V.", area: "Moorteichwiese", stand: 20, prefix: "MTW", aktion: "Jugend Lacrosse" },
-      { name: "1. BCK", area: "Moorteichwiese", stand: 21, prefix: "MTW", aktion: "Roundnet" },
-      { name: "Pferdesportverband SH", area: "Moorteichwiese", stand: 22, prefix: "MTW", aktion: "Rund ums Pferd" },
-      { name: "ASCK", area: "Moorteichwiese", stand: 23, prefix: "MTW", aktion: "Cheerleading" },
-      { name: "Handballverband SH", area: "Moorteichwiese", stand: 24, prefix: "MTW", aktion: "Handball" },
-      { name: "Tschip", area: "Moorteichwiese", stand: 25, prefix: "MTW", aktion: "" },
-      { name: "TuS Gaarden", area: "Moorteichwiese", stand: 26, prefix: "MTW", aktion: "Jugger" },
-      { name: "Norddeutscher Schützenbund von 1860 e.V.", area: "Moorteichwiese", stand: 27, prefix: "MTW", aktion: "Bogenschießen" },
-      { name: "FT Adler", area: "Moorteichwiese", stand: 28, prefix: "MTW", aktion: "Rugby, Quadball, Turnen, Gesundheitssport" },
-      { name: "Bühne", area: "Moorteichwiese", stand: 29, prefix: "MTW", aktion: "" },
-      { name: "Vereinservice", area: "Moorteichwiese", stand: 30, prefix: "MTW", aktion: "" },
-      { name: "Kiel Koalas AFC e.V.", area: "Moorteichwiese", stand: 31, prefix: "MTW", aktion: "Australien Football" },
-      { name: "Integration durch Sport", area: "Moorteichwiese", stand: 32, prefix: "MTW", aktion: "Module" },
-      { name: "IDS", area: "Moorteichwiese", stand: 33, prefix: "MTW", aktion: "" },
-      { name: "Rot-Schwarz Kiel", area: "Moorteichwiese", stand: 34, prefix: "MTW", aktion: "Baseball" }
-    ];
+        if (!kielResponse.ok) {
+          throw new Error("kiel.json konnte nicht geladen werden.");
+        }
 
-    let currentSort = 'stand';
-    let selectedArea = null;
+        if (!regionalResponse.ok) {
+          throw new Error("regional.json konnte nicht geladen werden.");
+        }
 
-    // Funktion zum Auswählen des Bereichs
+        const kielData = await kielResponse.json();
+        const regionalData = await regionalResponse.json();
+
+        const kielVereine = kielData.map(item => ({
+          ...item,
+          typ: "kiel"
+        }));
+
+        const regionalVereine = regionalData.map(item => ({
+          ...item,
+          typ: "regional"
+        }));
+
+        vereine = [...kielVereine, ...regionalVereine];
+
+        renderList();
+
+      } catch (error) {
+        console.error("Fehler beim Laden der Vereinsdaten:", error);
+
+        container.innerHTML = `
+          <div class="error-message">
+            Die Vereinsdaten konnten nicht geladen werden.<br>
+            Bitte prüfe, ob <strong>kiel.json</strong> und <strong>regional.json</strong>
+            im gleichen Ordner wie die <strong>index.html</strong> liegen.
+          </div>
+        `;
+      }
+    }
+
     function selectArea(area) {
       selectedArea = area;
+
+      document.getElementById("regionalButton").classList.remove("active");
+      document.getElementById("kielButton").classList.remove("active");
+
+      if (area === "regional") {
+        document.getElementById("regionalButton").classList.add("active");
+      }
+
+      if (area === "kiel") {
+        document.getElementById("kielButton").classList.add("active");
+      }
+
       renderList();
     }
 
-    // Funktion zum Rendern der Liste
     function renderList() {
       const container = document.getElementById("output");
       container.innerHTML = "";
 
-      // Filtere Vereine basierend auf der Auswahl
-      let filteredVereine = vereine;
-      if (selectedArea === "Kiel") {
-        filteredVereine = vereine.filter(v => v.area === "Moorteichwiese" || v.area === "Haus des Sports" || v.area === "Rewe-Areal" || v.area === "Winterbeker Weg");
+      const searchInput = document.getElementById("searchInput");
+      const searchText = searchInput ? searchInput.value.toLowerCase().trim() : "";
+
+      let filteredVereine = vereine.filter(item => item.typ === selectedArea);
+
+      if (searchText) {
+        filteredVereine = filteredVereine.filter(item => {
+          const name = (item.name || "").toLowerCase();
+          const area = (item.area || "").toLowerCase();
+          const aktion = (item.aktion || "").toLowerCase();
+          const prefix = (item.prefix || "").toLowerCase();
+          const stand = item.stand ? String(item.stand).toLowerCase() : "";
+
+          return (
+            name.includes(searchText) ||
+            area.includes(searchText) ||
+            aktion.includes(searchText) ||
+            prefix.includes(searchText) ||
+            stand.includes(searchText)
+          );
+        });
       }
 
-      if (currentSort === "name") {
+      if (filteredVereine.length === 0) {
+        container.innerHTML = `
+          <div class="status-message">
+            Keine passenden Einträge gefunden.
+          </div>
+        `;
+        return;
+      }
+
+      const grouped = filteredVereine.reduce((acc, item) => {
+        const areaName = item.area || "Ohne Bereich";
+
+        if (!acc[areaName]) {
+          acc[areaName] = [];
+        }
+
+        acc[areaName].push(item);
+        return acc;
+      }, {});
+
+      for (const [area, list] of Object.entries(grouped)) {
+        const section = document.createElement("div");
+        section.className = "section";
+
+        const heading = document.createElement("h2");
+        heading.textContent = area;
+        section.appendChild(heading);
+
         const ul = document.createElement("ul");
-        filteredVereine.sort((a, b) => a.name.localeCompare(b.name)).forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = `${item.name} (${item.prefix} ${item.stand})`;
-          ul.appendChild(li);
-        });
-        container.appendChild(ul);
-      } else {
-        const grouped = filteredVereine.reduce((acc, item) => {
-          if (!acc[item.area]) acc[item.area] = [];
-          acc[item.area].push(item);
-          return acc;
-        }, {});
-        for (const [area, list] of Object.entries(grouped)) {
-          const section = document.createElement("div");
-          section.className = "section";
-          const heading = document.createElement("h2");
-          heading.textContent = area;
-          section.appendChild(heading);
-          const ul = document.createElement("ul");
-          list.sort((a, b) => a.stand - b.stand).forEach((item) => {
+
+        list
+          .sort((a, b) => {
+            const standA = Number(a.stand) || 0;
+            const standB = Number(b.stand) || 0;
+            return standA - standB;
+          })
+          .forEach((item) => {
             const li = document.createElement("li");
-            li.textContent = `${item.prefix} ${item.stand}: ${item.name}`;
+
+            const prefix = item.prefix || "";
+            const stand = item.stand || "";
+            const name = item.name || "Ohne Namen";
+            const aktion = item.aktion || "";
+
+            li.innerHTML = `
+              <strong>${prefix} ${stand}: ${name}</strong>
+              ${aktion ? `<span class="aktion">${aktion}</span>` : ""}
+            `;
+
             ul.appendChild(li);
           });
-          section.appendChild(ul);
-          container.appendChild(section);
-        }
+
+        section.appendChild(ul);
+        container.appendChild(section);
       }
     }
 
-    // Sortierfunktionen
-    function sortByName() {
-      currentSort = "name";
-      renderList();
-    }
-
-    function sortByStand() {
-      currentSort = "stand";
-      renderList();
-    }
+    loadData();
   </script>
 </body>
 </html>

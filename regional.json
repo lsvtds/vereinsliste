@@ -1,1 +1,16 @@
-1 []
+[
+  {
+    "name": "Testverein Schleswig-Holstein",
+    "area": "Flensburg",
+    "stand": 1,
+    "prefix": "FL",
+    "aktion": "Regionaler Sportaktionstag"
+  },
+  {
+    "name": "TSV Musterstadt",
+    "area": "Lübeck",
+    "stand": 2,
+    "prefix": "HL",
+    "aktion": "Turnen und Bewegung"
+  }
+]
