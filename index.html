@@ -21,10 +21,32 @@
     }
 
     .header {
+      position: relative;
       text-align: center;
-      padding: 15px;
+      padding: 15px 55px;
       background-color: white;
       border-bottom: 2px solid #004F9F;
+    }
+
+    .back-button {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      color: #004F9F;
+      text-decoration: none;
+
+      font-size: 2rem;
+      font-weight: bold;
+      line-height: 1;
+
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .back-button:hover {
+      color: #003d80;
     }
 
     h1 {
@@ -97,7 +119,6 @@
       box-shadow: 0 0 0 2px rgba(0, 79, 159, 0.15);
     }
 
-    
     /* =========================
        Vereinsliste
        ========================= */
@@ -219,6 +240,15 @@
     }
 
     @media (max-width: 480px) {
+      .header {
+        padding: 15px 45px;
+      }
+
+      .back-button {
+        left: 12px;
+        font-size: 1.8rem;
+      }
+
       h1 {
         font-size: 1.2rem;
       }
@@ -238,6 +268,10 @@
 <body>
 
   <div class="header">
+    <a href="https://lsvtds.github.io/" class="back-button" aria-label="Zurück zur Startseite" title="Zurück zur Startseite">
+      ←
+    </a>
+
     <h1>Vereinsliste – Tag des Sports 2026</h1>
   </div>
 
