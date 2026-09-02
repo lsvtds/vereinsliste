@@ -1,24 +1,639 @@
 [
   {
-    "name": "BVSH",
+    "name": "FT Vorwärts",
     "area": "Rewe-Areal",
     "stand": 1,
     "prefix": "RA",
     "aktion": "Basketball"
   },
   {
-    "name": "CCVSH e.V.",
+    "name": "REWE",
     "area": "Rewe-Areal",
     "stand": 2,
     "prefix": "RA",
-    "aktion": "Cheerleading"
+    "aktion": "Kranballon"
+  },
+  {
+    "name": "Bühne Tanzplaza",
+    "area": "Rewe-Areal",
+    "stand": 3,
+    "prefix": "RA",
+    "aktion": ""
+  },
+  {
+    "name": "Pavillions Tanzplaza",
+    "area": "Rewe-Areal",
+    "stand": 4,
+    "prefix": "RA",
+    "aktion": "Diverse Tanzvereine"
+  },
+  {
+    "name": "LSV",
+    "area": "Rewe-Areal",
+    "stand": 5,
+    "prefix": "RA",
+    "aktion": "Bereichsleitung"
+  },
+  {
+    "name": "Kieler Floorball Klub",
+    "area": "Rewe-Areal",
+    "stand": 6,
+    "prefix": "RA",
+    "aktion": "Floorball"
+  },
+  {
+    "name": "Kieler TB",
+    "area": "Winterbeker Weg",
+    "stand": 1,
+    "prefix": "WW",
+    "aktion": "alle Sparte"
+  },
+  {
+    "name": "TSV Russee",
+    "area": "Winterbeker Weg",
+    "stand": 2,
+    "prefix": "WW",
+    "aktion": "Einrad"
+  },
+  {
+    "name": "SC Fortuna Wellsee",
+    "area": "Winterbeker Weg",
+    "stand": 3,
+    "prefix": "WW",
+    "aktion": "Rehasport, Sportakrobatik"
+  },
+  {
+    "name": "Gesellschaft für Jugendeinrichtungen, Jugendgästehäuser",
+    "area": "Winterbeker Weg",
+    "stand": 4,
+    "prefix": "WW",
+    "aktion": "verschiedenes"
+  },
+  {
+    "name": "Zahnärtzekammer",
+    "area": "Winterbeker Weg",
+    "stand": 5,
+    "prefix": "WW",
+    "aktion": "Zahnprävention"
+  },
+  {
+    "name": "Kieler Nachrichten",
+    "area": "Winterbeker Weg",
+    "stand": 6,
+    "prefix": "WW",
+    "aktion": "Hürdenlauf"
+  },
+  {
+    "name": "ETV Kiel",
+    "area": "Winterbeker Weg",
+    "stand": 7,
+    "prefix": "WW",
+    "aktion": "Drachenboot"
+  },
+  {
+    "name": "ETV Kiel",
+    "area": "Winterbeker Weg",
+    "stand": 8,
+    "prefix": "WW",
+    "aktion": "diverse Aktionen"
+  },
+  {
+    "name": "REWE",
+    "area": "Winterbeker Weg",
+    "stand": 9,
+    "prefix": "WW",
+    "aktion": "Foodtruck"
+  },
+  {
+    "name": "REWE",
+    "area": "Winterbeker Weg",
+    "stand": 10,
+    "prefix": "WW",
+    "aktion": "Airdome"
+  },
+  {
+    "name": "N.I.N.A. eV.",
+    "area": "Winterbeker Weg",
+    "stand": 11,
+    "prefix": "WW",
+    "aktion": "Fachberatung"
+  },
+  {
+    "name": "Integration durch Sport",
+    "area": "Winterbeker Weg",
+    "stand": 12,
+    "prefix": "WW",
+    "aktion": "Aktionen"
+  },
+  {
+    "name": "Special Olympics",
+    "area": "Winterbeker Weg",
+    "stand": 13,
+    "prefix": "WW",
+    "aktion": ""
+  },
+  {
+    "name": "FLughafen",
+    "area": "Winterbeker Weg",
+    "stand": 14,
+    "prefix": "WW",
+    "aktion": "Kletterwand, Fotobox"
+  },
+  {
+    "name": "",
+    "area": "Winterbeker Weg",
+    "stand": 15,
+    "prefix": "WW",
+    "aktion": "Rollstuhlparcour"
+  },
+  {
+    "name": "InTus",
+    "area": "Winterbeker Weg",
+    "stand": 16,
+    "prefix": "WW",
+    "aktion": "Kanusport, Goalball"
+  },
+  {
+    "name": "1. KGRSV",
+    "area": "Winterbeker Weg",
+    "stand": 17,
+    "prefix": "WW",
+    "aktion": "Rehabilitationssport"
+  },
+  {
+    "name": "Kieler Squash Club",
+    "area": "Winterbeker Weg",
+    "stand": 18,
+    "prefix": "WW",
+    "aktion": "Squash"
+  },
+  {
+    "name": "LSV",
+    "area": "Winterbeker Weg",
+    "stand": 19,
+    "prefix": "WW",
+    "aktion": "Infostand"
+  },
+  {
+    "name": "Tennisverband SH",
+    "area": "Winterbeker Weg",
+    "stand": 20,
+    "prefix": "WW",
+    "aktion": "Tennis"
+  },
+  {
+    "name": "SH Sportkegelverband",
+    "area": "Winterbeker Weg",
+    "stand": 21,
+    "prefix": "WW",
+    "aktion": "Kegeln"
+  },
+  {
+    "name": "LSV",
+    "area": "Winterbeker Weg",
+    "stand": 22,
+    "prefix": "WW",
+    "aktion": "IDS"
+  },
+  {
+    "name": "LSV",
+    "area": "Winterbeker Weg",
+    "stand": 23,
+    "prefix": "WW",
+    "aktion": "Sportmobil"
+  },
+  {
+    "name": "Automobilclub von Kiel e.V.",
+    "area": "Winterbeker Weg",
+    "stand": 24,
+    "prefix": "WW",
+    "aktion": "Motorsport"
+  },
+  {
+    "name": "Budo",
+    "area": "Winterbeker Weg",
+    "stand": 25,
+    "prefix": "WW",
+    "aktion": ""
+  },
+  {
+    "name": "Hüpfburg",
+    "area": "Haus des Sports",
+    "stand": 1,
+    "prefix": "HDS",
+    "aktion": ""
+  },
+  {
+    "name": "echt achtzig",
+    "area": "Haus des Sports",
+    "stand": 2,
+    "prefix": "HDS",
+    "aktion": "Fotobox"
+  },
+  {
+    "name": "",
+    "area": "Haus des Sports",
+    "stand": 3,
+    "prefix": "HDS",
+    "aktion": "Torwand, Airhockey, Seillaufen"
+  },
+  {
+    "name": "Tischtennisverband SH",
+    "area": "Haus des Sports",
+    "stand": 4,
+    "prefix": "HDS",
+    "aktion": "Tischtennis"
+  },
+  {
+    "name": "BsG Neumünster",
+    "area": "Haus des Sports",
+    "stand": 5,
+    "prefix": "HDS",
+    "aktion": "Rolliparcour"
+  },
+  {
+    "name": "Polizeitsportverein",
+    "area": "Haus des Sports",
+    "stand": 6,
+    "prefix": "HDS",
+    "aktion": "Lichtschwert"
+  },
+  {
+    "name": "LSV Vereinsservice",
+    "area": "Haus des Sports",
+    "stand": 7,
+    "prefix": "HDS",
+    "aktion": "VR Hüpfburg"
+  },
+  {
+    "name": "LSV",
+    "area": "Haus des Sports",
+    "stand": 8,
+    "prefix": "HDS",
+    "aktion": "Bühne"
+  },
+  {
+    "name": "LSV",
+    "area": "Haus des Sports",
+    "stand": 9,
+    "prefix": "HDS",
+    "aktion": "Infostand"
+  },
+  {
+    "name": "Sport-Thieme",
+    "area": "Haus des Sports",
+    "stand": 10,
+    "prefix": "HDS",
+    "aktion": "Parkpong, Spikeball"
+  },
+  {
+    "name": "ARAG",
+    "area": "Haus des Sports",
+    "stand": 11,
+    "prefix": "HDS",
+    "aktion": "Reaktionsspiele"
+  },
+  {
+    "name": "LSV",
+    "area": "Haus des Sports",
+    "stand": 12,
+    "prefix": "HDS",
+    "aktion": "Beratung bieten, Zukunft gestalten"
+  },
+  {
+    "name": "IKEA",
+    "area": "Haus des Sports",
+    "stand": 13,
+    "prefix": "HDS",
+    "aktion": "Kinderschminken"
+  },
+  {
+    "name": "LSV",
+    "area": "Haus des Sports",
+    "stand": 14,
+    "prefix": "HDS",
+    "aktion": "Parksportabzeichen"
+  },
+  {
+    "name": "Dt. Jugendherbergswerk",
+    "area": "Haus des Sports",
+    "stand": 15,
+    "prefix": "HDS",
+    "aktion": "Unterkünfte für Sportgruppen"
+  },
+  {
+    "name": "Kieler Buben",
+    "area": "Haus des Sports",
+    "stand": 16,
+    "prefix": "HDS",
+    "aktion": "Skat"
+  },
+  {
+    "name": "SK Doppelbauer Kiel",
+    "area": "Haus des Sports",
+    "stand": 17,
+    "prefix": "HDS",
+    "aktion": "Schach"
+  },
+  {
+    "name": "Verband Deutscher Sport Taucher",
+    "area": "Haus des Sports",
+    "stand": 18,
+    "prefix": "HDS",
+    "aktion": "Tauchen"
+  },
+  {
+    "name": "Gewerkschaft Polizei",
+    "area": "Haus des Sports",
+    "stand": 19,
+    "prefix": "HDS",
+    "aktion": "*Pfoten weg*"
+  },
+  {
+    "name": "LSV",
+    "area": "Haus des Sports",
+    "stand": 20,
+    "prefix": "HDS",
+    "aktion": "Leistungssport"
+  },
+  {
+    "name": "Betriebssportverband Kiel",
+    "area": "Haus des Sports",
+    "stand": 21,
+    "prefix": "HDS",
+    "aktion": "Infostand"
+  },
+  {
+    "name": "Hoppe",
+    "area": "Haus des Sports",
+    "stand": 22,
+    "prefix": "HDS",
+    "aktion": "Puppentheater"
+  },
+  {
+    "name": "",
+    "area": "Haus des Sports",
+    "stand": 23,
+    "prefix": "HDS",
+    "aktion": ""
+  },
+  {
+    "name": "SHFV",
+    "area": "Moorteichwiese",
+    "stand": 1,
+    "prefix": "MTW",
+    "aktion": "Fußball/Inklusionsfußball"
   },
   {
     "name": "Holstein Kiel",
     "area": "Moorteichwiese",
-    "stand": 3,
+    "stand": 2,
     "prefix": "MTW",
     "aktion": "Fußballschule"
+  },
+  {
+    "name": "Sportjugend SH",
+    "area": "Moorteichwiese",
+    "stand": 3,
+    "prefix": "MTW",
+    "aktion": "Fit & Fun & Bungeerun"
+  },
+  {
+    "name": "Sportjugend SH",
+    "area": "Moorteichwiese",
+    "stand": 4,
+    "prefix": "MTW",
+    "aktion": "Charity Lauf"
+  },
+  {
+    "name": "Lubinus",
+    "area": "Moorteichwiese",
+    "stand": 5,
+    "prefix": "MTW",
+    "aktion": "Massagen"
+  },
+  {
+    "name": "REWE",
+    "area": "Moorteichwiese",
+    "stand": 6,
+    "prefix": "MTW",
+    "aktion": ""
+  },
+  {
+    "name": "FT Vorwärts",
+    "area": "Moorteichwiese",
+    "stand": 7,
+    "prefix": "MTW",
+    "aktion": "Darts"
+  },
+  {
+    "name": "Kreisschützenverband Nordfriesland",
+    "area": "Moorteichwiese",
+    "stand": 8,
+    "prefix": "MTW",
+    "aktion": "Blasrohrschießen"
+  },
+  {
+    "name": "Golfverband SH",
+    "area": "Moorteichwiese",
+    "stand": 9,
+    "prefix": "MTW",
+    "aktion": "Golf"
+  },
+  {
+    "name": "Auto Centrum Lass",
+    "area": "Moorteichwiese",
+    "stand": 10,
+    "prefix": "MTW",
+    "aktion": ""
+  },
+  {
+    "name": "Kieler RV",
+    "area": "Moorteichwiese",
+    "stand": 11,
+    "prefix": "MTW",
+    "aktion": "Radsport"
+  },
+  {
+    "name": "",
+    "area": "Moorteichwiese",
+    "stand": 12,
+    "prefix": "MTW",
+    "aktion": ""
+  },
+  {
+    "name": "Provinzial",
+    "area": "Moorteichwiese",
+    "stand": 13,
+    "prefix": "MTW",
+    "aktion": "Torwandschießen"
+  },
+  {
+    "name": "ORLEN",
+    "area": "Moorteichwiese",
+    "stand": 14,
+    "prefix": "MTW",
+    "aktion": ""
+  },
+  {
+    "name": "AOK",
+    "area": "Moorteichwiese",
+    "stand": 15,
+    "prefix": "MTW",
+    "aktion": "Laufparcour, Reaktionsspiele"
+  },
+  {
+    "name": "Ruderverband SH",
+    "area": "Moorteichwiese",
+    "stand": 16,
+    "prefix": "MTW",
+    "aktion": "Rudern"
+  },
+  {
+    "name": "Sportverband Kiel",
+    "area": "Moorteichwiese",
+    "stand": 17,
+    "prefix": "MTW",
+    "aktion": "Zwergenhaus, Mini Sportabzeichen"
+  },
+  {
+    "name": "Sparkasse",
+    "area": "Moorteichwiese",
+    "stand": 18,
+    "prefix": "MTW",
+    "aktion": "Kaffeeboot"
+  },
+  {
+    "name": "FC Süd Kiel",
+    "area": "Moorteichwiese",
+    "stand": 19,
+    "prefix": "MTW",
+    "aktion": "Torwandschießen"
+  },
+  {
+    "name": "VFB Kiel",
+    "area": "Moorteichwiese",
+    "stand": 20,
+    "prefix": "MTW",
+    "aktion": "Tschip"
+  },
+  {
+    "name": "Pferdesportverband SH",
+    "area": "Moorteichwiese",
+    "stand": 21,
+    "prefix": "MTW",
+    "aktion": "Pferdesport"
+  },
+  {
+    "name": "Kieler TV",
+    "area": "Moorteichwiese",
+    "stand": 22,
+    "prefix": "MTW",
+    "aktion": "Volleyball"
+  },
+  {
+    "name": "Kieler TV",
+    "area": "Moorteichwiese",
+    "stand": 23,
+    "prefix": "MTW",
+    "aktion": "Sportakrobatik"
+  },
+  {
+    "name": "Balteckbars e.V",
+    "area": "Moorteichwiese",
+    "stand": 24,
+    "prefix": "MTW",
+    "aktion": "Calisthenics"
+  },
+  {
+    "name": "Interreg Projekt NETE",
+    "area": "Moorteichwiese",
+    "stand": 25,
+    "prefix": "MTW",
+    "aktion": "Quizz und Mitmachspiele"
+  },
+  {
+    "name": "FT Adler",
+    "area": "Moorteichwiese",
+    "stand": 26,
+    "prefix": "MTW",
+    "aktion": "Stand Rugby, Quadball"
+  },
+  {
+    "name": "WeCycle",
+    "area": "Moorteichwiese",
+    "stand": 27,
+    "prefix": "MTW",
+    "aktion": "Cyclocross"
+  },
+  {
+    "name": "LSV",
+    "area": "Moorteichwiese",
+    "stand": 28,
+    "prefix": "MTW",
+    "aktion": "Hüpfburg 2, Sportmobil 2"
+  },
+  {
+    "name": "Lacrosse Club Kiel",
+    "area": "Moorteichwiese",
+    "stand": 29,
+    "prefix": "MTW",
+    "aktion": "Lacrosse"
+  },
+  {
+    "name": "Kiel Koalas",
+    "area": "Moorteichwiese",
+    "stand": 30,
+    "prefix": "MTW",
+    "aktion": "AUS Football"
+  },
+  {
+    "name": "Handballverband SH",
+    "area": "Moorteichwiese",
+    "stand": 31,
+    "prefix": "MTW",
+    "aktion": "Handball"
+  },
+  {
+    "name": "TUS Garden",
+    "area": "Moorteichwiese",
+    "stand": 32,
+    "prefix": "MTW",
+    "aktion": "Jugger"
+  },
+  {
+    "name": "Nordeutscher Schützenbund",
+    "area": "Moorteichwiese",
+    "stand": 33,
+    "prefix": "MTW",
+    "aktion": "Bogenschießen"
+  },
+  {
+    "name": "FT Adler",
+    "area": "Moorteichwiese",
+    "stand": 34,
+    "prefix": "MTW",
+    "aktion": "Rugby, Quadball"
+  },
+  {
+    "name": "Bühne",
+    "area": "Moorteichwiese",
+    "stand": 35,
+    "prefix": "MTW",
+    "aktion": ""
+  },
+  {
+    "name": "LSV Vereinsservice",
+    "area": "Moorteichwiese",
+    "stand": 36,
+    "prefix": "MTW",
+    "aktion": ""
+  },
+  {
+    "name": "Rot-Schwarz Kiel",
+    "area": "Moorteichwiese",
+    "stand": 37,
+    "prefix": "MTW",
+    "aktion": "Baseball"
   }
 ]
-
