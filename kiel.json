@@ -130,7 +130,7 @@
     "area": "Winterbeker Weg",
     "stand": 13,
     "prefix": "WW",
-    "aktion": ""
+    "aktion": "Mitmachangebote"
   },
   {
     "name": "FLughafen",
@@ -140,11 +140,11 @@
     "aktion": "Kletterwand, Fotobox"
   },
   {
-    "name": "",
+    "name": "Rollstuhlparcour",
     "area": "Winterbeker Weg",
     "stand": 15,
     "prefix": "WW",
-    "aktion": "Rollstuhlparcour"
+    "aktion": ""
   },
   {
     "name": "InTus",
@@ -210,18 +210,18 @@
     "aktion": "Motorsport"
   },
   {
-    "name": "Budo",
+    "name": "Budosport",
     "area": "Winterbeker Weg",
     "stand": 25,
     "prefix": "WW",
     "aktion": ""
   },
   {
-    "name": "Hüpfburg",
+    "name": "LSV",
     "area": "Haus des Sports",
     "stand": 1,
     "prefix": "HDS",
-    "aktion": ""
+    "aktion": "Hüpfburg"
   },
   {
     "name": "echt achtzig",
@@ -231,7 +231,7 @@
     "aktion": "Fotobox"
   },
   {
-    "name": "",
+    "name": "LSV",
     "area": "Haus des Sports",
     "stand": 3,
     "prefix": "HDS",
@@ -455,11 +455,11 @@
     "aktion": "Radsport"
   },
   {
-    "name": "",
+    "name": "LSV",
     "area": "Moorteichwiese",
     "stand": 12,
     "prefix": "MTW",
-    "aktion": ""
+    "aktion": "Infostand"
   },
   {
     "name": "Provinzial",
