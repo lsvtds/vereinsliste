@@ -41,6 +41,14 @@
     "prefix": "RA",
     "aktion": "Floorball"
   },
+ {
+    "name": "Bresthalle",
+    "area": "Winterbeker Weg",
+    "stand": Halle,
+    "prefix": "WW",
+    "aktion": "Tischtennis, Turnen, Handball (THW Kiel)
+Rollstuhlbasketball (Rehabilitations- und Behinderten Sportverband, Kieler Wheeler)"
+  },
   {
     "name": "Kieler TB",
     "area": "Winterbeker Weg",
