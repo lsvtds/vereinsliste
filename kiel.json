@@ -628,5 +628,47 @@
     "stand": 37,
     "prefix": "MTW",
     "aktion": "Baseball"
+  },
+  {
+    "name": "THW Kiel",
+    "area": "Winterbeker Weg",
+    "stand": null,
+    "prefix": "WW",
+    "aktion": "Tischtennis, Turnen, Handball"
+  },
+  {
+    "name": "Rehabilitations- und Behinderten-Sportverband, Kieler Wheeler",
+    "area": "Winterbeker Weg",
+    "stand": null,
+    "prefix": "WW",
+    "aktion": "Rollstuhlasketball"
+  },
+  {
+    "name": "Schleswig-Holsteinischer Badminton-Verband",
+    "area": "Haus des Sports",
+    "stand": null,
+    "prefix": "HDS",
+    "aktion": "Badminton"
+  },
+  {
+    "name": "TuS Holtenau",
+    "area": "Haus des Sports",
+    "stand": null,
+    "prefix": "HDS",
+    "aktion": "Showkrobatik"
+  },
+  {
+    "name": "FT Vorwärts",
+    "area": "Haus des Sports",
+    "stand": null,
+    "prefix": "HDS",
+    "aktion": "Luftakrobatik"
+  },
+  {
+    "name": "Schleswig-Holsteinischer Turnverband",
+    "area": "Haus des Sports",
+    "stand": null,
+    "prefix": "HDS",
+    "aktion": "Turnen"
   }
 ]
