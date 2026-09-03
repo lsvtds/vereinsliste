@@ -40,14 +40,13 @@
     "stand": 6,
     "prefix": "RA",
     "aktion": "Floorball"
- },
- {
+  },
+  {
     "name": "Bresthalle",
     "area": "Winterbeker Weg",
-    "stand": Halle,
-    "prefix": "WW",
-    "aktion": "Tischtennis, Turnen, Handball (THW Kiel)
-Rollstuhlbasketball (Rehabilitations- und Behinderten Sportverband, Kieler Wheeler)"
+    "stand": 0,
+    "prefix": "HALLE",
+    "aktion": "Tischtennis, Turnen, Handball (THW Kiel), Rollstuhlbasketball (Rehabilitations- und Behinderten Sportverband, Kieler Wheeler)"
   },
   {
     "name": "Kieler TB",
@@ -227,22 +226,22 @@ Rollstuhlbasketball (Rehabilitations- und Behinderten Sportverband, Kieler Wheel
   {
     "name": "Strahlsundhalle",
     "area": "Haus des Sports",
-    "stand": Halle,
-    "prefix": "HDS",
-    "aktion": "Badminton (Schleswig-Holteinischen Badminton-Verband, Skater Hockey (TuS Holtenau), Ryhtmische Sportgymnastik (Kieler TB), Rollkunstlauf/Rolltanz/Paarlauf (REG und Kieler Roll- und Eissportverein)"
+    "stand": -2,
+    "prefix": "HALLE",
+    "aktion": "Badminton (Schleswig-Holsteinischer Badminton-Verband), Skater Hockey (TuS Holtenau), Rhythmische Sportgymnastik (Kieler TB), Rollkunstlauf, Rolltanz und Paarlauf (REG und Kieler Roll- und Eissportverein)"
   },
   {
-    "name": "Rudi Gauch Halle",
+    "name": "Rudi-Gauch-Halle",
     "area": "Haus des Sports",
-    "stand": Halle,
-    "prefix": "HDS",
+    "stand": -1,
+    "prefix": "HALLE",
     "aktion": "Turnen (Schleswig-Holsteinischer Turnverband)"
   },
   {
     "name": "Hans-Hansen-Saal",
     "area": "Haus des Sports",
-    "stand": Halle,
-    "prefix": "HDS",
+    "stand": 0,
+    "prefix": "HALLE",
     "aktion": "Showakrobatik (TuS Holtenau), Luftakrobatik (FT Vorwärts)"
   },
   {
